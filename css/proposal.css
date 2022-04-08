@@ -1,0 +1,44 @@
+/* A class for the style of the page*/
+
+html {
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    color: rgb(17, 70, 65);
+    font-family: 'Lora', Arial; 
+    font-size: 35px;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgb(255, 238, 209);
+}
+
+h2 {
+    font-size: 25px;
+    margin-left: 0.5in;
+}
+
+h3 {
+    font-style: italic;
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+}
+
+body {
+    font-size: 15px; 
+    font-family: Arial, 'Helvetica';
+    margin: 0.1in;
+    line-height: 1.5;
+ }
+
+ p {
+     margin: 0.5in;
+     margin-top: auto;
+     margin-bottom: auto;
+ }
+
+ section {
+     background-color: rgb(248, 243, 238);
+     border-radius: 10px;
+ }
