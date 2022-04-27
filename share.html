@@ -31,74 +31,83 @@
 
     <main>
         <div class="container">
-            <h2>Enter Restaurant Name</h2>
             <div class="textbox">
-                <p>Name</p>
+                <form>
+                    <div class="form-group">
+                        <label for="nameInput">Enter Restaurant Name</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                    </div>
+                </form>         
             </div>
         </div>
 
         <div class="container">
-            <h2>Enter Restaurant Address</h2>
             <div class="textbox">
-                <p>Address Line 1</p>
-            </div>
-            <div class="textbox">
-                <p>Address Line 2</p>
+                <form>
+                    <div class="form-group">
+                        <label for="addressInput">Enter Restaurant Address</label>
+                        <input type="text" class="form-control" id="addressInput1" placeholder="Address Line 1">
+                    </div>
+                </form> 
+                
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="addressInput2" placeholder="Address Line 2">
+                    </div>
+                </form>
             </div>
         </div>
 
         <div class="container">
             <h2>Tags</h2>
             <div class="dropdown">
-                <p>Select All That Apply</p>
-                <span class="material-symbols-outlined">arrow_drop_down</span>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Select All That Apply </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
             </div>
         </div>
 
         <div class="container">
             <h2>Price Range</h2>
-            <div class="pricerange">
-                <p>$</p>
-            </div>
-
-            <div class="pricerange">
-                <p>$$</p>
-            </div>
-
-            <div class="pricerange">
-                <p>$$$</p>
-            </div>
-
-            <div class="pricerange">
-                <p>$$$$</p>
-            </div>
+            <button type="button" class="btn btn-secondary">$</button>
+            <button type="button" class="btn btn-secondary">$$</button>
+            <button type="button" class="btn btn-secondary">$$$</button>
+            <button type="button" class="btn btn-secondary">$$$$</button>
         </div>
 
-        <div class="button">
-            <h2>Save</h2>
-        </div>
+        <button type="button" class="btn btn-warning">Save</button>
     </main>
 </body>
 
-<footer>
-    <div class="icon">
-        <span class="material-symbols-outlined">home</span>
-        <p>Home</p>
-    </div>
+<nav>
 
-    <div class="icon">
-        <span class="material-symbols-outlined">bookmark</span>
-        <p>My List</p>
-    </div>
+    <ul class="nav">
+        <li>
+            <div class="nav-item">
+                <span class="material-symbols-outlined">home</span>
+                <a class="nav-link disabled" href="#">Home</a>
+            </div>
+        </li>
+        
+        <li>
+            <div class="nav-item">
+                <span class="material-symbols-outlined">bookmark</span>
+                <a class="nav-link disabled" href="#">My List</a>
+            </div>
+        </li>
 
-    <div class="icon">
-        <span class="material-symbols-outlined">add</span>
-        <p>Share</p>
-    </div>
+        <li>
+            <div class="nav-item">
+                <span class="material-symbols-outlined">add</span>
+                <a class="nav-link disabled" href="#">Share</a>
+            </div>
+        </li>
 
-    <div class="icon">
-        <span class="material-symbols-outlined">person</span>
-        <p>Profile</p>
-    </div>
-</footer>
+        <li>
+            <div class="nav-item">
+                <span class="material-symbols-outlined">person</span>
+                <a class="nav-link disabled" href="#">Profile</a>
+            </div>
+        </li>
+      </ul>
+</nav>
 </html>
