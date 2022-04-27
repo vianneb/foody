@@ -61,6 +61,14 @@ nav a:hover {
      font-size: 4em;
  }
 
+ input {
+     width: 70%;
+ }
+
+div > .col-md-8 > p  {
+     display:inline-block;
+    width: 70%;
+ }
 
  
  
