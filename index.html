@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <!-- link in Bootstrap here -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.css">
     <!-- CSS only -->
@@ -23,17 +27,28 @@
     <!-- viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
 
 <body>
 
     <header>
+        <div class="container bg-c-yellow-light">
+            <h1 class="text-center logo">Foody</h1>
+            <div class="row">
+                <div class="d-flex col-md-12 col-xl-12 w-100">
+                    
+                        <form id="form search-bar" class="w-100">
+                            <input type="search" id="query" name="q" placeholder="Search...">
+                            <button class="btn"><i class="bi bi-search"></i></button>
+                        </form>
+                        <i id="Current-Location" class="fa-solid fa-location-dot">Address</i>
+                    
+                </div>
+            </div>
+        </div>
+        
 
-        <form id="form search-bar">
-            <input type="search" id="query" name="q" placeholder="Search...">
-            <button class="btn"><i class="bi bi-search"></i></button>
-        </form>
-        <i id="Current-Location" class="fa-solid fa-location-dot">Address</i>
 
     </header>
 
@@ -41,128 +56,186 @@
     <main>
 
 
-
         <div class="container">
 
+            <div class="row mt-4 mb-4">
+
+                <div class="d-flex col-md-6 col-xl-3">
+                    <div class="card mb-4 hover-c-yellow">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-auto col-xl-12">
+                                    <img class="card-img-top pb-3" src="img/burger.jpg" alt="burger">
+                                </div>
+                                <div class="col-sm">
+                                    <h2 class="card-title">Burgers</h2>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+                                        fuga?</p>
+                                    <a class="btn btn-dark" href="#">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="d-flex col-md-6 col-xl-3">
+                    <div class="card mb-4 hover-c-yellow">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-auto col-xl-12">
+                                    <img class="card-img-top pb-3" src="img/dessert.jpg" alt="strawberry tart">
+                                </div>
+                                <div class="col-sm">
+                                    <h2 class="card-title">Dessert</h2>
+                                    <p class="card-text">Quam, officiis ut adipisci pariatur veniam labore ipsum optio
+                                        tenetur!</p>
+                                    <a class="btn btn-dark" href="#">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="d-flex col-md-6 col-xl-3">
+                    <div class="card mb-4 hover-c-yellow">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-auto col-xl-12">
+                                    <img class=" card-img-top pb-3" src="img/coffee.jpg" alt="coffee">
+                                </div>
+                                <div class="col-sm">
+                                    <h2 class="card-title">Drinks</h2>
+                                    <p class="card-text">Reiciendis doloremque voluptas veniam repellendus quisquam
+                                        deleniti tenetur quia
+                                        a.</p>
+                                    <a class="btn btn-dark" href="#">Explore</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="d-flex col-md-6 col-xl-3">
+                    <div class="card mb-4 hover-c-yellow">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-auto col-xl-12">
+                                    <img class="card-img-top pb-3" src="img/fries.jpg" alt="fries">
+                                </div>
+                                <div class="col-sm">
+                                    <h2 class="card-title">Snacks</h2>
+                                    <p class="card-text">Maiores voluptate rem odit dolor temporibus asperiores maxime
+                                        velit sapiente.</p>
+                                    <a class="btn btn-dark" href="#">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="container">
+            <h1>Featured Categories</h1>
+            <div class="row mt-4 mb-4">
+                <!-- Card 1 -->
+                <div class="d-flex col-md-12 col-xl-6">
+                    <div class="card mb-4 w-100 bg-c-yellow">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title text-center txt-c-white">Vegan</h2>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="d-flex col-md-12 col-xl-6">
+                    <div class="card mb-4 w-100 bg-c-orange">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title text-center txt-c-white">Keto</h2>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="d-flex col-md-12 col-xl-6">
+                    <div class="card mb-4 w-100 bg-c-yellow">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title text-center txt-c-white">Diary-Free</h2>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Card 4 -->
+                <div class="d-flex col-md-12 col-xl-6">
+                    <div class="card mb-4 w-100 bg-c-orange">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title text-center txt-c-white">Gluten-free</h2>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
             <div class="row">
 
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
+                <h1>Near Me</h1>
 
-                    <div class="card bg-secondary" style="width: 6rem; height: 7rem;">
-                        <img class="p-2" src="img/drinks.png" alt="A photo of a drink">
+                <!-- Card 1 -->
+                <div class="d-flex col-md-12 col-xl-12">
+                    <div class="card mb-4 w-100">
+
                         <div class="card-body">
-                            <p class="card-text">Drinks</p>
-                        </div>
-                    </div>
+                            <div class="row">
+                                <div class="col-md-4 col-xl-4">
+                                    <img class="card-img-top pb-3" src="img/rest.jpg" alt="indoor restaurant seating">
+                                </div>
+                                <div class="col-md-8 col-xl-8">
+                                    <h2 class="card-title">Byrek & Baguette</h2>
+                                    <p id="restaurant-location" class="fa-solid fa-location-dot">4209 University Way NE,
+                                        Seattle, WA 98105</p>
+                                    <p id="time" class="fa-solid fa-clock">3 min - 1.1 km</p>
+                                    <div>
+                                        <a class="btn btn-dark" href="#">More Information</a>
+                                    </div>
 
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 6rem; height: 7rem;">
-                        <img class="p-2 " src="img/burger.png" alt="A photo of a burger">
-                        <div class="card-body">
-                            <div class="card-text">Burgers</div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 6rem; height: 7rem;">
-                        <img class="p-2" src="img/sweets.png" alt="A photo of sweets">
-                        <div class="card-body">
-                            <p class="card-text">Sweets</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 6rem; height: 7rem;">
-                        <img class="p-2" src="img/snacks.png" alt="A photo of snacks">
-                        <div class="card-body">
-                            <p class="card-text">Snacks</p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row mt-4">
-
-                <p>Featured Categories</p>
-                <p>view all</p>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-                    <div class="card bg-secondary" style="width: 8rem; height:8rem;">
-                        <div class="card-img-overlay">
-                            <p class="card-title">Vegan</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 8rem; height:8rem;">
-                        <div class="card-img-overlay">
-                            <p class="card-title">Gluten-free</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 8rem; height:8rem;">
-                        <div class="card-img-overlay">
-                            <p class="card-title">Keto</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="d-flex col-xs-6 col-sm-6 col-md-6 justify-content-center mb-4">
-
-                    <div class="card bg-secondary" style="width: 8rem; height:8rem;">
-                        <div class="card-img-overlay">
-                            <p class="card-title">Diary-Free</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-            <div class="row">
-
-                <p>Near Me</p>
-                <p>view all</p>
-
-                <div class="d-flex col-xs-12 col-sm-12 col-md-12 justify-content-center mb-4">
-                    <div class="row">
-                        <div class="col-sm-4 col-md-4">
-                            <img class="card-img-top p-2" src="img/snacks.png" alt="A photo of snacks">
-                            <p class="card-title"></p>
-                        </div>
-                        <div class="col-sm-8 col-md-8">
-
-                            <h1> Dapur Ijah Restaurant </h1>
-                            <p id="restaurant-location" class="fa-solid fa-location-dot">13 th Street, 46 W 12th St, NY
-                            </p>
-                            <p id="time" class="fa-solid fa-clock">3 min - 1.1 km</p>
-
-
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+        </div>
 
 
 
@@ -170,18 +243,20 @@
 
         </div>
 
-
-        <nav class="navbar navbar-inverse navbar-fixed-bottom">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Foody</a>
+        <div class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Foody</a>
+                    </div>
+                    <a href="#"><span class="material-symbols-outlined">home</span>Home</a>
+                    <a href="#Favorites"><span class="material-symbols-outlined">bookmark</span>My List</a>
+                    <a href="#Share"><span class="material-symbols-outlined">add</span>Share</a>
+                    <a href="#Profile"><span class="material-symbols-outlined">person</span>Profile</a>
                 </div>
-                <a href="#">Home</a>
-                <a href="#Favorites">My List</a>
-                <a href="#Share">Share</a>
-                <a href="#Profile">Profile</a>
-            </div>
-        </nav>
+            </nav>
+
+        </div>
 
         </div>
 

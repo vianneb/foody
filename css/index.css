@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
 }
@@ -30,7 +30,36 @@ nav a:hover {
     border-bottom: solid;
     border-bottom-width: 0.8rem;
     border-bottom-color:#f0f0f0;
- } */
+ }
+
+ .bg-c-yellow {
+    background-color: #FFC107;
+ }
+
+ .bg-c-yellow-light {
+    background-color: #FFDB72;
+ }
+
+ .bg-c-orange {
+    background-color: #ff922c;
+ }
+
+ .txt-c-white {
+     color: white;
+ }
+
+ .btn {
+     background-color: #d35400;
+ }
+
+ .hover-c-yellow:hover {
+     background-color: #FFC107;
+ }
+
+ .logo {
+     font-style: bold;
+     font-size: 4em;
+ }
 
 
  
