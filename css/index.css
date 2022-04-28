@@ -1,79 +1,85 @@
-body, p {
+body,
+p {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
 }
 
-nav a{
+nav a {
     color: #808080;
     text-decoration: none;
     display: inline;
     margin: 0 1rem;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 nav a:hover {
-    color:  #C54E00;
+    color: #C54E00;
     border-bottom: solid;
-    border-bottom-color:#f0f0f0;
+    border-bottom-color: #f0f0f0;
     border-bottom-width: 0.8rem;
- }
- 
- nav a:focus {
-    color:  #C54E00;
-    border-bottom: solid;
-    border-bottom-color:#f0f0f0;
-    border-bottom-width: 0.8rem;
- }
+}
 
- nav a:active {
-    color:  #C54E00;
+nav a:focus {
+    color: #C54E00;
+    border-bottom: solid;
+    border-bottom-color: #f0f0f0;
+    border-bottom-width: 0.8rem;
+}
+
+nav a:active {
+    color: #C54E00;
     border-bottom: solid;
     border-bottom-width: 0.8rem;
-    border-bottom-color:#f0f0f0;
- }
+    border-bottom-color: #f0f0f0;
+}
 
- .bg-c-yellow {
+.bg-c-yellow {
     background-color: #FFC107;
- }
+}
 
- .bg-c-yellow-light {
+.bg-c-yellow-light {
     background-color: #FFDB72;
- }
+}
 
- .bg-c-orange {
+.bg-c-orange {
     background-color: #ff922c;
- }
+}
 
- .txt-c-white {
-     color: white;
- }
+.txt-c-white {
+    color: white;
+}
 
- .btn {
-     background-color: #d35400;
- }
+.btn {
+    background-color: #d35400;
+}
 
- .hover-c-yellow:hover {
-     background-color: #FFC107;
- }
+.hover-c-yellow:hover {
+    background-color: #FFC107;
+}
 
- .logo {
-     font-style: bold;
-     font-size: 4em;
- }
+.logo {
+    font-style: bold;
+    font-size: 4em;
+}
 
- input {
-     width: 70%;
- }
-
-div > .col-md-8 > p  {
-     display:inline-block;
+input {
     width: 70%;
- }
+}
 
- 
- 
- 
- 
- 
+div>.col-md-8>p {
+    display: inline-block;
+    width: 70%;
+}
 
+.text-dec {
+    text-decoration: none;
+}
 
+.text-dec:hover {
+    text-decoration-color: white;
+}
+
+html, body, main {
+    margin:0;
+    padding:0;
+}
