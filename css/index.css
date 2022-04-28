@@ -78,7 +78,7 @@ div>.col-md-8>p {
 
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
-div .nav-links input[type=checkbox] {
+div.nav-links input[type=checkbox] {
     display: none;
 }
 
