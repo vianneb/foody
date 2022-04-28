@@ -1,7 +1,7 @@
-body{
+body {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
-    padding-top: 175px; 
+    padding-top: 175px;
     padding-bottom: 50px;
 }
 
@@ -52,7 +52,7 @@ nav h1.logo {
     font-weight: 900;
 }
 
-input {
+input.search{
     width: 70%;
 }
 
@@ -70,6 +70,23 @@ div>.col-md-8>p {
 }
 
 
+
+
+.margin-t {
+    margin-top: 1em;
+}
+
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+div .nav-links input[type=checkbox] {
+    display: none;
+}
+
+/*HAMBURGER MENU*/
+li {
+    list-style: none;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -77,28 +94,44 @@ div>.col-md-8>p {
     padding: 20px;
     background-color: #FFDB72;
     color: black;
-    position:fixed;
-    top:0;
-    width:100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 9999;
+}
+
+#menu {
+    display: none;
+    position: absolute;
+    background-color: #FFDB72;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    margin-top:3.5em;
+}
+
+#menu li:hover {
+    display: inline-block;
+    background-color: #fde59c;
+    transition: 0.3s ease;
+}
+
+/* .menu li+li {
+    margin-top: 12px;
+} */
+
+div input[type=checkbox]:checked~#menu {
+    display: block;
+}
+
+#hamburger {
+    display: block;
 }
 
 .nav-links a {
     color: black;
     text-decoration: none;
-}
-
-/* LOGO */
-.logo {
-    font-size: 32px;
-    padding-bottom: .4em;
-}
-
-/* NAVBAR MENU */
-.menu {
-    display: flex;
-    gap: 1em;
-    font-size: 18px;
 }
 
 .menu li:hover {
@@ -107,36 +140,14 @@ div>.col-md-8>p {
     transition: 0.3s ease;
 }
 
-.menu li {
-    padding: 5px 14px;
-}
-
-li {
-    list-style: none;
-}
-
-.margin-t {
-    margin-top: 1em;
-}
-
-
-
-
-/*RESPONSIVE NAVBAR MENU STARTS*/
-ul input[type=checkbox] {
-    display: none;
-}
-
-/*HAMBURGER MENU*/
-.hamburger {
-    display: none;
-    font-size: 24px;
-    user-select: none;
+h1.logo {
+    padding-bottom: 0;
 }
 
 /* APPLYING MEDIA QUERIES */
-@media (max-width: 768px) {
-    .menu {
+@media (min-width: 768px) {
+
+    /* .menu {
         display: none;
         position: absolute;
         background-color: #FFDB72;
@@ -163,6 +174,32 @@ ul input[type=checkbox] {
 
     .hamburger {
         display: block;
+    } */
+    
+
+    
+    #hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+    }
+    
+
+    /* LOGO */
+    .logo {
+        font-size: 32px;
+        padding-bottom: .4em;
+    }
+
+    /* NAVBAR MENU */
+    #menu {
+        display: inline-flex;
+        gap: 1em;
+        font-size: 18px;
+    }
+
+    #menu li {
+        padding: 5px 14px;
     }
 
 }

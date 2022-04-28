@@ -40,28 +40,58 @@
 <body>
 
 
+    <!-- <header>
+        
+
+        <nav class="navbar d-flex">
+
+            
+            <h1 class="logo justify-content-start">Foody</h1>
+            
+            <div class="nav-links justify-content-end">
+                
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" id="hamburger">&#9776;</label>
+            
+                <ul id="menu" class="menu nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">My List</a></li>
+                    <li><a href="#">Share</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </div>
+
+
+        </nav>
+
+        <h1 class="text-center margin-t">Add a restaurant</h1>
+
+    </header> -->
+
     <header>
         <!-- nav bar -->
         <nav class="navbar">
             <!-- LOGO -->
             <h1 class="logo">Foody</h1>
             <!-- NAVIGATION MENU -->
-            <ul class="nav-links">
+            <div class="nav-links">
                 <!-- USING CHECKBOX HACK -->
                 <input type="checkbox" id="checkbox_toggle" />
-                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <label for="checkbox_toggle" class="hamburger" id="hamburger">&#9776;</label>
                 <!-- NAVIGATION MENUS -->
-                <div class="menu">
+
+                <div id="menu" class="menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">My List</a></li>
                     <li><a href="#">Share</a></li>
                     <li><a href="#">Profile</a></li>
                 </div>
-            </ul>
+            </div>
         </nav>
         <h1 class="text-center margin-t">Add a restaurant</h1>
 
     </header>
+
 
 
 
@@ -107,23 +137,24 @@
 
         <div class="container checkbox">
 
-            <p class="margin-t">Tags<p>
+            <p class="margin-t">Tags
+            <p>
 
-            
-                <form action="#" class="checkbox">
-                
-                    <input type="checkbox" id="vegan" name="vegan" value="vegan">
-                    <label for="vegan">Vegan</label><br>
 
-                    <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free">
-                    <label for="gluten-free"> Gluten-free</label><br>
-                    <input type="checkbox" id="keto" name="keto" value="keto">
-                    <label for="keto"> Keto</label><br>
-                    <input type="checkbox" id="diary-free" name="diary-free" value="diary-free">
-                    <label for="diary-free"> Diary-Free</label><br>                 
+            <form action="#" class="checkbox">
 
-                </form>
-           
+                <input type="checkbox" id="vegan" name="vegan" value="vegan">
+                <label for="vegan">Vegan</label><br>
+
+                <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free">
+                <label for="gluten-free"> Gluten-free</label><br>
+                <input type="checkbox" id="keto" name="keto" value="keto">
+                <label for="keto"> Keto</label><br>
+                <input type="checkbox" id="diary-free" name="diary-free" value="diary-free">
+                <label for="diary-free"> Diary-Free</label><br>
+
+            </form>
+
 
             <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Select All That Apply </button>
