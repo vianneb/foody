@@ -69,13 +69,23 @@ div>.col-md-8>p {
     text-decoration-color: white;
 }
 
-
-
-
 .margin-t {
     margin-top: 1em;
 }
 
+.title {
+    padding: 10px 20px;
+    margin: 4px 2px;
+}
+
+.hours {
+    margin: 2px 2px;
+}
+
+#buttons {
+    align-items: center;
+    margin: 1rem;
+}
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
 div.nav-links input[type=checkbox] {

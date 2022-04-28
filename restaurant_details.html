@@ -32,24 +32,21 @@
 
 <body>
     <header>
-        <div>
+        <div class="title">
             <h1><span class="material-symbols-outlined">arrow_back_ios</span>Byrek & Baguette</h1>
             <span class="material-symbols-outlined">favorite</span>
         </div>
     </header>
 
-    <div>
+    <div class="title">
         <address><span class="material-icons">place</span>4209 University Way NE, Seattle, WA 98105</address>
+        <p class="hours">$$ Open 11:00 AM - 10:00 PM</p>
     </div>
 
     <div>
-        <p>$$ Open 11:00 AM - 10:00 PM</p>
-    </div>
-
-    <div>
-        <button type="button" class="btn btn-secondary">Healthy</button>
-        <button type="button" class="btn btn-secondary">Kid-friendly</button>
-        <button type="button" class="btn btn-secondary">Free Parking</button>
+        <button id="buttons" type="button" class="btn btn-secondary">Healthy</button>
+        <button id="buttons" type="button" class="btn btn-secondary">Kid-friendly</button>
+        <button id="buttons" type="button" class="btn btn-secondary">Free Parking</button>
     </div>
 
     <div>
@@ -64,21 +61,26 @@
         <img class="card-img-top pb-3" src="img/map.jpg" alt="indoor restaurant seating"> 
     </div>
 
-    <div class="container">
-        <nav class="navbar navbar-inverse navbar-fixed-bottom">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Foody</a>
+    <header>
+    <nav class="navbar"> 
+        <h1 class="logo">Foody</h1>
+                <!-- NAVIGATION MENU -->
+                <div class="nav-links">
+                    <!-- USING CHECKBOX HACK -->
+                    <input type="checkbox" id="checkbox_toggle" />
+                    <label for="checkbox_toggle" class="hamburger" id="hamburger">&#9776;</label>
+                    <!-- NAVIGATION MENUS -->
+                    <ul id="menu" class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">My List</a></li>
+                        <li><a href="#">Share</a></li>
+                        <li><a href="#">Profile</a></li>
+                    </ul>
                 </div>
-                <a href="#"><span class="material-symbols-outlined">home</span>Home</a>
-                <a href="#Favorites"><span class="material-symbols-outlined">bookmark</span>My List</a>
-                <a href="#Share"><span class="material-symbols-outlined">add</span>Share</a>
-                <a href="#Profile"><span class="material-symbols-outlined">person</span>Profile</a>
-            </div>
-        </nav>
-    </div>
+                <div class="d-flex col-md-12 col-xl-12 w-100 mb-4"></div>
+            </nav>
+        </header>
     
 </body>
 
 </html>
-
