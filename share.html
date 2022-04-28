@@ -41,11 +41,29 @@
 
 
     <header>
-        <span class="material-symbols-outlined">arrow_back_ios</span>
-        <div>
-            <h1>Add a restaurant</h1>
-        </div>
+        <!-- nav bar -->
+        <nav class="navbar">
+            <!-- LOGO -->
+            <h1 class="logo">Foody</h1>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+                <!-- USING CHECKBOX HACK -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <!-- NAVIGATION MENUS -->
+                <div class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">My List</a></li>
+                    <li><a href="#">Share</a></li>
+                    <li><a href="#">Profile</a></li>
+                </div>
+            </ul>
+        </nav>
+        <h1 class="text-center margin-t">Add a restaurant</h1>
+
     </header>
+
+
 
     <main>
         <div class="container">
@@ -76,47 +94,63 @@
             </div>
         </div>
 
-        <div>
-            <p>Add a picture for the restaurant</p>
-            <form action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
-                <input type="submit">
-            </form>
-        </div>
-
         <div class="container">
-            <h2>Tags</h2>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Select All That Apply </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
+            <p>Add a picture for the restaurant</p>
+            <div class="container d-flex">
+
+                <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                </form>
+
             </div>
         </div>
 
-        <div class="container">
-            <h2>Price Range</h2>
-            <button type="button" class="btn btn-secondary">$</button>
-            <button type="button" class="btn btn-secondary">$$</button>
-            <button type="button" class="btn btn-secondary">$$$</button>
-            <button type="button" class="btn btn-secondary">$$$$</button>
+        <div class="container checkbox">
+
+            <p class="margin-t">Tags<p>
+
+            
+                <form action="#" class="checkbox">
+                
+                    <input type="checkbox" id="vegan" name="vegan" value="vegan">
+                    <label for="vegan">Vegan</label><br>
+
+                    <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free">
+                    <label for="gluten-free"> Gluten-free</label><br>
+                    <input type="checkbox" id="keto" name="keto" value="keto">
+                    <label for="keto"> Keto</label><br>
+                    <input type="checkbox" id="diary-free" name="diary-free" value="diary-free">
+                    <label for="diary-free"> Diary-Free</label><br>                 
+
+                </form>
+           
+
+            <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Select All That Apply </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div> -->
+
         </div>
 
-        <button type="button" class="btn btn-warning">Save</button>
-
-        <!-- nav bar -->
         <div class="container">
-            <nav class="navbar navbar-inverse navbar-fixed-bottom">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Foody</a>
-                    </div>
-                    <a href="#"><span class="material-symbols-outlined">home</span>Home</a>
-                    <a href="#Favorites"><span class="material-symbols-outlined">bookmark</span>My List</a>
-                    <a href="#Share"><span class="material-symbols-outlined">add</span>Share</a>
-                    <a href="#Profile"><span class="material-symbols-outlined">person</span>Profile</a>
-                </div>
-            </nav>
+            <p class="margin-t">Price Range</p>
+            <!-- <button type="button" class="btn rounded">$</button>
+            <button type="button" class="btn rounded">$$</button>
+            <button type="button" class="btn rounded">$$$</button>
+            <button type="button" class="btn rounded">$$$$</button> -->
+            <button class="button">$</button>
+            <button class="button">$$</button>
+            <button class="button">$$$</button>
+            <button class="button">$$$$</button>
         </div>
+
+        <div class="d-flex container margin-t justify-content-center">
+            <form action="/action_page.php">
+                <input type="submit" value="Submit" style="height:30px; width:100px">
+            </form>
+        </div>
+
+
+
 
     </main>
 

@@ -1,37 +1,10 @@
-body,
-p {
+body{
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
+    padding-top: 175px; 
+    padding-bottom: 50px;
 }
 
-nav a {
-    color: #808080;
-    text-decoration: none;
-    display: inline;
-    margin: 0 1rem;
-    font-size: 20px;
-}
-
-nav a:hover {
-    color: #C54E00;
-    border-bottom: solid;
-    border-bottom-color: #f0f0f0;
-    border-bottom-width: 0.8rem;
-}
-
-nav a:focus {
-    color: #C54E00;
-    border-bottom: solid;
-    border-bottom-color: #f0f0f0;
-    border-bottom-width: 0.8rem;
-}
-
-nav a:active {
-    color: #C54E00;
-    border-bottom: solid;
-    border-bottom-width: 0.8rem;
-    border-bottom-color: #f0f0f0;
-}
 
 .bg-c-yellow {
     background-color: #FFC107;
@@ -53,13 +26,30 @@ nav a:active {
     background-color: #d35400;
 }
 
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.button:hover {
+    background-color: #f1f1f1;
+}
+
 .hover-c-yellow:hover {
     background-color: #FFC107;
 }
 
-.logo {
-    font-style: bold;
-    font-size: 4em;
+nav h1.logo {
+    font-size: 2.5em;
+    font-weight: 900;
 }
 
 input {
@@ -79,7 +69,100 @@ div>.col-md-8>p {
     text-decoration-color: white;
 }
 
-html, body, main {
-    margin:0;
-    padding:0;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FFDB72;
+    color: black;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index: 9999;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+}
+
+/* LOGO */
+.logo {
+    font-size: 32px;
+    padding-bottom: .4em;
+}
+
+/* NAVBAR MENU */
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.menu li:hover {
+    background-color: #fde59c;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+li {
+    list-style: none;
+}
+
+.margin-t {
+    margin-top: 1em;
+}
+
+
+
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+ul input[type=checkbox] {
+    display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: #FFDB72;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+        margin-top:3.5em;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #fde59c;
+        transition: 0.3s ease;
+    }
+
+    .menu li+li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
 }
