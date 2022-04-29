@@ -92,6 +92,9 @@ div>.col-md-8>p {
     margin: 1rem;
 }
 
+footer {
+    margin-left: 2rem;
+}
 /*RESPONSIVE NAVBAR MENU STARTS*/
 div.nav-links input[type=checkbox] {
     display: none;
