@@ -5,6 +5,11 @@ body {
     padding-bottom: 50px;
 }
 
+.bigger-text {
+    font-weight: 400;
+    font-size: 18px;
+    padding-top: 20px;
+}
 
 .bg-c-yellow {
     background-color: #FFC107;
