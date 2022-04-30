@@ -1,14 +1,24 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
-    padding-top: 175px;
+    padding-top: 150px;
     padding-bottom: 50px;
+}
+
+body.main-body {
+    padding-top: 200px;
+}
+
+
+h1{
+    margin: 0 0 8px;
+    font-size: 32px;
 }
 
 .bigger-text {
     font-weight: 400;
     font-size: 18px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .bg-c-yellow {
@@ -52,7 +62,7 @@ body {
     background-color: #FFC107;
 }
 
-nav h1.logo {
+h1.logo {
     font-size: 2.5em;
     font-weight: 900;
 }
@@ -78,10 +88,10 @@ div>.col-md-8>p {
     margin-top: 1em;
 }
 
-.title {
+/* .title {
     padding: 10px 20px;
     margin: 4px 2px;
-}
+} */
 
 .hours {
     margin: 2px 2px;
@@ -118,7 +128,7 @@ li {
     z-index: 9999;
 }
 
-#menu {
+ul.menu{
     display: none;
     position: absolute;
     background-color: #FFDB72;
@@ -126,10 +136,13 @@ li {
     left: 0;
     text-align: center;
     padding: 16px 0;
-    margin-top:3.5em;
+    /* margin-top:3.5em;  */
+    z-index: 9999;
 }
 
-#menu li:hover {
+
+
+.menu li:hover {
     display: inline-block;
     background-color: #fde59c;
     transition: 0.3s ease;
@@ -137,13 +150,13 @@ li {
 
 /* .menu li+li {
     margin-top: 12px;
-} */
+}  */
 
-div input[type=checkbox]:checked~#menu {
+div input[type=checkbox]:checked~ul.menu {
     display: block;
 }
 
-#hamburger {
+.hamburger {
     display: block;
 }
 
@@ -160,6 +173,8 @@ div input[type=checkbox]:checked~#menu {
 
 h1.logo {
     padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* APPLYING MEDIA QUERIES */
@@ -196,7 +211,7 @@ h1.logo {
     
 
     
-    #hamburger {
+    .hamburger {
         display: none;
         font-size: 24px;
         user-select: none;
@@ -210,14 +225,24 @@ h1.logo {
     }
 
     /* NAVBAR MENU */
-    #menu {
+    .nav-links ul.menu {
         display: inline-flex;
         gap: 1em;
         font-size: 18px;
     }
 
-    #menu li {
+    .menu li {
         padding: 5px 14px;
+    }
+
+    ul.menu {
+        display: none;
+        position: relative;
+        background-color: #FFDB72;
+        right: 0;
+        top: 0;
+        text-align: center;
+        padding: 16px 0;
     }
 
 }

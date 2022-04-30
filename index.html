@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="Foody is a website that helps you find and support local restaurants. By Uyen Dao, Iverson Li, Kateryna Tymofeieva, Vianne Bui Nguyen">
+    <meta name="viewport"
+        content="Foody is a website that helps you find and support local restaurants. By Uyen Dao, Iverson Li, Kateryna Tymofeieva, Vianne Bui Nguyen">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +22,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
+    <!-- This stylesheet will somewhat "normalize" the styling across browsers -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
     <!-- CSS file here -->
     <link href="css/index.css" rel="stylesheet">
 
@@ -31,30 +35,32 @@
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
 
-<body>
+<body class="main-body">
 
     <header>
 
         <nav class="navbar">
             <!-- LOGO -->
-            <h1 class="logo">Foody</h1>
+            <h1 class="logo" style="text-align:left">Foody</h1>
 
 
             <!-- NAVIGATION MENU -->
             <div class="nav-links">
                 <!-- USING CHECKBOX HACK -->
-                <input type="checkbox" id="checkbox_toggle" />
+                <input type="checkbox" id="checkbox_toggle" class="checkbox" />
                 <label for="checkbox_toggle" class="hamburger" id="hamburger">&#9776;</label>
                 <!-- NAVIGATION MENUS -->
-                <ul id="menu" class="menu">
+
+                <ul id="menu" class="menu" style="float:right">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">My List</a></li>
                     <li><a href="share.html">Share</a></li>
                     <li><a href="#">Profile</a></li>
                 </ul>
+
             </div>
 
-            <div class="d-flex col-md-12 col-xl-12 w-100 mb-4">
+            <div class="d-flex col-md-12 col-xl-12 w-100">
 
                 <form style="text-align:center" center-text id="form search-bar" class="w-100">
                     <input class="search" type="search" id="query" name="q" placeholder="Search...">
@@ -80,7 +86,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-auto col-xl-12">
-                                    <img class="card-img-top pb-3" src="img/burger.jpg" alt="burger">
+                                    <img class="card-img-top pb-3" src="img/burger.jpg" alt="a burger">
                                 </div>
                                 <div class="col-sm">
                                     <h2 class="card-title">Burgers</h2>
@@ -120,7 +126,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-auto col-xl-12">
-                                    <img class=" card-img-top pb-3" src="img/coffee.jpg" alt="coffee">
+                                    <img class=" card-img-top pb-3" src="img/coffee.jpg" alt="a cup of coffee">
                                 </div>
                                 <div class="col-sm">
                                     <h2 class="card-title">Drinks</h2>
@@ -142,7 +148,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-auto col-xl-12">
-                                    <img class="card-img-top pb-3" src="img/fries.jpg" alt="fries">
+                                    <img class="card-img-top pb-3" src="img/fries.jpg" alt="a plate of french fries">
                                 </div>
                                 <div class="col-sm">
                                     <h2 class="card-title">Snacks</h2>
@@ -231,7 +237,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4 col-xl-4">
-                                    <img class="card-img-top pb-3" src="img/rest.jpg" alt="indoor restaurant seating">
+                                    <img class="card-img-top pb-3" src="img/rest.jpg" alt="indoor restaurant seating at Byrek & Baguette">
                                 </div>
                                 <div class=" col-md-8 col-xl-8">
                                     <h2 class="card-title">Byrek & Baguette</h2>
@@ -260,7 +266,7 @@
     </main>
 
     <footer>
-        <p>© 2022 GitHub, Inc. <a href = "mailto:foody@gmail.comContact">Contact us</a> </p>
+        <p>© 2022 GitHub, Inc. <a href="mailto:foody@gmail.comContact">Contact us</a> </p>
     </footer>
 </body>
 
