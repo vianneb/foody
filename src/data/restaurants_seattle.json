@@ -1,0 +1,52 @@
+[
+  {
+    "Name": "The Pink Door",
+    "Star": 4.5,
+    "Stars_count": 5473,
+    "Price": "$$",
+    "Area": "Downtown",
+    "Category": "['Italian', 'Wine Bars', 'Seafood']",
+    "Services": "['Proof of vaccination required', 'Delivery', 'Takeout']",
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Nue",
+    "Star": 4,
+    "Stars_count": 1067,
+    "Price": "$$",
+    "Area": "Capitol Hill",
+    "Category": "['Tapas/Small Plates', 'Cocktail Bars', 'Breakfast & Brunch']",
+    "Services": "['Live wait time: 0 mins', 'Outdoor dining', 'Delivery', 'Takeout']",
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Biscuit Bitch",
+    "Star": 4,
+    "Stars_count": 4046,
+    "Price": "$",
+    "Area": "Downtown",
+    "Category": "['Breakfast & Brunch', 'Coffee & Tea', 'Southern']",
+    "Services": "['Outdoor dining', 'Delivery', 'Takeout']",
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Witness",
+    "Star": 4.5,
+    "Stars_count": 847,
+    "Price": "$$",
+    "Area": "Capitol Hill",
+    "Category": "['Southern', 'Cocktail Bars']",
+    "Services": "['Outdoor dining', 'Delivery', 'Takeout']",
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "The Walrus and the Carpenter",
+    "Star": 4,
+    "Stars_count": 1680,
+    "Price": "$$$",
+    "Area": "Ballard",
+    "Category": "['Seafood', 'Tapas/Small Plates']",
+    "Services": "['Outdoor dining', 'Takeout']",
+    "Searched City": "Seattle"
+  }
+]
