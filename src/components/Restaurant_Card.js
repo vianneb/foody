@@ -11,7 +11,7 @@ export function RestaurantCard(props) {
               <div className="card-body">
                 <div className="row">
                   <div className="col-md-4 col-xl-4">
-                  <div><img className="card-img-top pb-3" src={'img/rest.jpg'} alt={"indoor restaurant seating at Byrek & Baguette"}/></div>
+                  <div><img className="card-img-top pb-3" src={require("./img/rest.jpg")} alt={"indoor restaurant seating at Byrek & Baguette"}/></div>
                   </div>
                   <div className=" col-md-8 col-xl-8">
                     <h2 className="card-title">Byrek &amp; Baguette</h2>
