@@ -16,7 +16,7 @@ export function NavBar(props) {
                 <ul id="menu" className="menu" style={{float: "right"}}>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">My List</a></li>
-                    <li><a href="share.html">Share</a></li>
+                    <li><a href="#">Share</a></li>
                     <li><a href="#">Profile</a></li>
                 </ul>
 

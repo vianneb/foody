@@ -1,15 +1,16 @@
 import React from "react";
 
 import { NavBar } from "./Navbar";
-import { Categories } from "./Category_Button";
+import { CategoryList } from "./Category_Button";
 
+let tagList = ["Vegan", "Keto", "Dairy-free", "Gluten-free"];
 
 export default function App() {
   return (
     <div className="App">
       <body className="main-body">
-        <NavBar />
-        <Categories />
+        <NavBar />          
+        <CategoryList tags={tagList} />
       </body>
     </div>
   );

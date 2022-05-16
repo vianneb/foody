@@ -10,7 +10,7 @@ body.main-body {
 }
 
 
-h1{
+h1, h2{
     margin: 0 0 8px;
     font-size: 32px;
 }
@@ -29,7 +29,8 @@ h1{
 }
 
 .bg-c-orange {
-    background-color: #ff922c;
+    background-color: #ff922c; 
+    
 }
 
 .txt-c-white {

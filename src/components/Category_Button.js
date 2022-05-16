@@ -1,47 +1,30 @@
 import React from "react";
 
-export function Categories(props) {
+export function CategoryButton(props) {
+
+    return (
+        <div className="d-flex col-md-12 col-xl-6">
+            <a className="card mb-4 w-100 bg-c-orange stretched-link text-dec" href="#">
+                <div className="card-body">
+                    <h3 className="card-title text-center txt-c-white">{props.tag}</h3>
+                </div>
+            </a>
+        </div>
+    )
+
+}
+export function CategoryList(props) {
+
+    let categoryList = props.tags.map((tag) => {
+        let component = <CategoryButton tag={tag} />
+        return component;
+    })
+
     return (
         <div className="container">
-            <h1>Featured Categories</h1>
-            <div class="row mt-4 mb-4">
-
-                {/*Card 1 */}  
-                <div class="d-flex col-md-12 col-xl-6">
-                    <a class="card mb-4 w-100 bg-c-yellow stretched-link text-dec" href="#">
-                        <div class="card-body">
-                            <h2 class="card-title text-center txt-c-white">Vegan</h2>
-                        </div>
-                    </a>
-                </div>
-
-                {/*Card 2 */}  
-                <div class="d-flex col-md-12 col-xl-6">
-                    <a class="card mb-4 w-100 bg-c-orange stretched-link text-dec" href="#">
-                        <div class="card-body">
-                            <h2 class="card-title text-center txt-c-white">Keto</h2>
-                        </div>
-                    </a>
-                </div>
-
-                {/*Card 3 */}  
-                <div class="d-flex col-md-12 col-xl-6">
-                    <a class="card mb-4 w-100 bg-c-yellow stretched-link text-dec" href="#">
-                        <div class="card-body">
-                            <h2 class="card-title text-center txt-c-white">Diary-Free</h2>
-                        </div>
-                    </a>
-                </div>
-
-                {/*Card 4 */}  
-                <div class="d-flex col-md-12 col-xl-6">
-                    <a class="card mb-4 w-100 bg-c-orange stretched-link text-dec" href="#">
-                        <div class="card-body">
-                            <h2 class="card-title text-center txt-c-white">Gluten-free</h2>
-                        </div>
-                    </a>
-                </div>
-
+            <h2>Featured Categories</h2>
+            <div className="row mt-4 mb-4">
+                {categoryList};
             </div>
         </div>
     )
