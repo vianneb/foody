@@ -29,13 +29,13 @@ export function RestaurantCard(props) {
 
 
 export function RestaurantList(props) {
-  let restaurantItems = props.restaurants.map((restaurant) => {
+  let restaurantItems = props.restaurantList.map((restaurant) => {
     let component = <RestaurantCard key={restaurant.name} restaurant={restaurant} />
     return component;
   })
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-4">
       <div className="row">
         <h1>Near Me</h1>
         {restaurantItems}

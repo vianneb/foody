@@ -10,7 +10,7 @@ export function CheckBox(props) {
     )
 }
 export function CheckBoxList(props) {
-    let checkboxItems = props.tags.map((tag) => {
+    let checkboxItems = props.tagList.map((tag) => {
         let component = <CheckBox key={tag} tag={tag} />
         return component;
     })
@@ -68,7 +68,7 @@ export function AddForm(props) {
                     <p className="margin-t bigger-text">Tags</p>
 
 
-                    <CheckBoxList tags={props.tags}/>
+                    <CheckBoxList tagList={props.tagList}/>
 
                 </div>
 

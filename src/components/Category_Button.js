@@ -15,7 +15,7 @@ export function CategoryButton(props) {
 }
 export function CategoryList(props) {
 
-    let categoryList = props.tags.map((tag) => {
+    let categoryList = props.tagList.map((tag) => {
         let component = <CategoryButton tag={tag} />
         return component;
     })
