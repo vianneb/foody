@@ -23,6 +23,6 @@ export default function App() {
         {/* <SharePage tagList={tagList}/> */}
       </body>
     </div>
-  );
+  )
 
 }
