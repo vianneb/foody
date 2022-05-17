@@ -1,15 +1,38 @@
 import React from "react";
 
 export function FoodCard(props) {
-    return (
-
-      <div className="d-flex col-md-12 col-xl-6">
-        <a className="card mb-4 w-100 bg-c-yellow stretched-link text-dec" href="#">
-          <div className="card-body">
-            <h2 className="card-title text-center txt-c-white">{props.category}</h2>
+  return (
+    <div className="d-flex col-md-6 col-xl-3">
+      <div className="card mb-4 hover-c-yellow">
+        <div className="card-body">
+          <div className="row">
+            <div className="col-sm-auto col-xl-12">
+              <div><img className="card-img-top pb-3" src={props.foodObj.img} /></div>
+            </div>
+            <div class="col-sm">
+              <h2 class="card-title">{props.foodObj.title}</h2>
+              <p class="card-text">{props.foodObj.description}</p>
+              <a class="btn btn-dark" href="#">Explore</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
-    );
-  }
-  
+    </div>
+
+  );
+}
+
+export function FoodCardList(props) {
+  let foodItems = props.foodArray.map((foodObj) => {
+    let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
+    return component
+  })
+
+  return (
+    <div class="container">
+      <div class="row mt-4 mb-4">
+        {foodItems}
+      </div>
+    </div>
+  )
+}
