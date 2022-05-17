@@ -29,6 +29,6 @@ let restaurantsArray = [{name: "Byrek & Baguette", address: "4209 University Way
         <AddForm tags={tagList}/>
       </body>
     </div>
-  );
+  )
 
 }

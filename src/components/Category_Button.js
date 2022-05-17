@@ -24,7 +24,7 @@ export function CategoryList(props) {
         <div className="container">
             <h2>Featured Categories</h2>
             <div className="row mt-4 mb-4">
-                {categoryList};
+                {categoryList}
             </div>
         </div>
     )
