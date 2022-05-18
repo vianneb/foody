@@ -11,9 +11,9 @@ export function FoodCard(props) {
             <div className="col-sm-auto col-xl-12">
               <div><img className="card-img-top pb-3" src={props.foodObj.img} /></div>
             </div>
-            <div class="col-sm">
-              <h2 class="card-title">{props.foodObj.title}</h2>
-              <p class="card-text">{props.foodObj.description}</p>
+            <div className="col-sm">
+              <h2 className="card-title">{props.foodObj.title}</h2>
+              <p className="card-text">{props.foodObj.description}</p>
               <OrangeButton text="Explore"/>
             </div>
           </div>
@@ -31,8 +31,8 @@ export function FoodCardList(props) {
   })
 
   return (
-    <div class="container">
-      <div class="row mt-4 mb-4">
+    <div className="container">
+      <div className="row mt-4 mb-4">
         {foodItems}
       </div>
     </div>

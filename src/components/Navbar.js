@@ -24,7 +24,7 @@ export function NavBar(props) {
 
             <div className="d-flex col-md-12 col-xl-12 w-100">
 
-                <form style={{textAlign: "center"}} id="form search-bar" class="w-100">
+                <form style={{textAlign: "center"}} id="form search-bar" className="w-100">
                     <input className="search" type="search" id="query" name="q" placeholder="Search..."/>
                     <button className="btn"><SearchIcon /></button>
                 </form>
