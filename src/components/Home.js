@@ -10,12 +10,12 @@ export function HomePage(props) {
   
     return (
         <div className="App">
-          <body className="main-body">
+          <div className="main-body">
             <NavBar />      
             <FoodCardList foodList={props.foodList} />   
             <CategoryList tagList={props.tagList} />          
             <RestaurantList restaurantList={props.restaurantList}/>
-          </body>
+          </div>
         </div>
       );
 }

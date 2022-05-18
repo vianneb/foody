@@ -17,11 +17,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <body className="main-body">
+      <div className="main-body">
         <HomePage foodList={foodList} tagList={tagList} restaurantList={restaurantList}/>
         {/* Comment out to have one page showing at a time */}
         {/* <SharePage tagList={tagList}/> */}
-      </body>
+      </div>
     </div>
   )
 
