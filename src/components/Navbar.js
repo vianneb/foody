@@ -12,7 +12,7 @@ export function NavBar(props) {
             <div className="nav-links">
 
                 <input type="checkbox" id="checkbox_toggle" className="checkbox" />
-                <label for="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
+                <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
                 <ul id="menu" className="menu" style={{float: "right"}}>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">My List</a></li>
