@@ -1,4 +1,5 @@
 import React from "react";
+import { OrangeButton } from "./Orange_Button";
 
 export function RestaurantCard(props) {
   return (
@@ -16,7 +17,7 @@ export function RestaurantCard(props) {
                 <p>{props.restaurant.address}</p>
               </div>
               <div>
-                <a className="btn btn-dark" href="#">More Information</a>
+              <OrangeButton text="More Information"/>
               </div>
             </div>
           </div>

@@ -1,4 +1,6 @@
 import React from "react";
+import { OrangeButton } from "./Orange_Button";
+
 
 export function FoodCard(props) {
   return (
@@ -12,7 +14,7 @@ export function FoodCard(props) {
             <div class="col-sm">
               <h2 class="card-title">{props.foodObj.title}</h2>
               <p class="card-text">{props.foodObj.description}</p>
-              <a class="btn btn-dark" href="#">Explore</a>
+              <OrangeButton text="Explore"/>
             </div>
           </div>
         </div>
