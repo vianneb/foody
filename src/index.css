@@ -1,7 +1,7 @@
-body {
+.main-body {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
-    padding-top: 75px;
+    padding-top: 100px;
     padding-bottom: 25px;
 }
 
@@ -133,10 +133,11 @@ ul.menu{
 
 
 
-.menu li:hover {
+.hover-link:hover {
     display: inline-block;
     background-color: #fde59c;
     transition: 0.3s ease;
+    border-radius: 5px;
 }
 
 

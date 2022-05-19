@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // import material icons
 import SearchIcon from '@mui/icons-material/Search';
 
-export function NavBar(props) {
+export function HomeNavBar(props) {
     return (
         <nav className="navbar">
 
@@ -14,10 +15,9 @@ export function NavBar(props) {
                 <input type="checkbox" id="checkbox_toggle" className="checkbox" />
                 <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
                 <ul id="menu" className="menu" style={{float: "right"}}>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">My List</a></li>
-                    <li><a href="#">Share</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <Link className="hover-link" to="/">Home</Link>
+                    <Link className="hover-link" to="/share">Share</Link>
+                    {/* <li><a href="/list">My List</a></li>  */}
                 </ul>
 
             </div>
@@ -31,6 +31,27 @@ export function NavBar(props) {
 
             </div>
 
+        </nav>
+    )
+}
+
+export function NavBar(props) {
+    return (
+        <nav className="navbar">
+
+            <h1 className="logo" style={{textAlign: "left"}}>Foody</h1>
+            
+            <div className="nav-links">
+
+                <input type="checkbox" id="checkbox_toggle" className="checkbox" />
+                <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
+                <ul id="menu" className="menu" style={{float: "right"}}>
+                    <Link className="hover-link" to="/">Home</Link>
+                    <Link className="hover-link" to="/share">Share</Link>
+                    {/* <li><a href="/list">My List</a></li>  */}
+                </ul>
+
+            </div>
         </nav>
     )
 }

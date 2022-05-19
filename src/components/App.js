@@ -1,7 +1,9 @@
 import React from "react";
+import { Routes, Route } from 'react-router-dom';
 
 import { HomePage } from "./Home";
 import { SharePage } from "./Add_Restaurant";
+import { NavBar } from "./Navbar";
 
 
 export default function App() {
@@ -18,7 +20,17 @@ export default function App() {
   return (
     <div className="App">
       <div className="main-body">
-        <HomePage foodList={foodList} tagList={tagList} restaurantList={restaurantList}/>
+
+        <Routes>
+          {/* default to Home page */}
+          <Route path="/" element={
+            <HomePage foodList={foodList} tagList={tagList} restaurantList={restaurantList}/>
+          } />
+          <Route path="share" element={
+            <SharePage tagList={tagList}/>
+          } />
+        </Routes>
+        
         {/* Comment out to have one page showing at a time */}
         {/* <SharePage tagList={tagList}/> */}
       </div>

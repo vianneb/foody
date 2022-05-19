@@ -26,7 +26,7 @@ export function AddForm(props) {
     return (
 
         <div className="container">
-            <h2 className="text-center">Add a restaurant</h2>
+            <h2 className="text-center mt-4">Add a restaurant</h2>
             <form>
                 <div className="container">
                     <div className="textbox">
