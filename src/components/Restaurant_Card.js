@@ -7,14 +7,14 @@ export function RestaurantCard(props) {
       <div className="card mb-4 w-100">
         <div className="card-body">
           <div className="row">
-            <div className="col-md-4 col-xl-4">
+            {/* <div className="col-md-4 col-xl-4">
               <div><img className="card-img-top pb-3" src={props.restaurant.img}/></div>
-            </div>
+            </div> */}
             <div className=" col-md-8 col-xl-8">
-              <h2 className="card-title">{props.restaurant.name}</h2>
+              <h2 className="card-title">{props.restaurant.Name}</h2>
               <div className="d-flex">
                 <span className="material-icons">place</span>
-                <p>{props.restaurant.address}</p>
+                <p>{props.restaurant.Area}</p>
               </div>
               <div>
               <OrangeButton text="More Information"/>
@@ -31,7 +31,7 @@ export function RestaurantCard(props) {
 
 export function RestaurantList(props) {
   let restaurantItems = props.restaurantList.map((restaurant) => {
-    let component = <RestaurantCard key={restaurant.name} restaurant={restaurant} />
+    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} />
     return component;
   })
 

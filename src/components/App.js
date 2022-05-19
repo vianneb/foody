@@ -3,8 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import { HomePage } from "./Home";
 import { SharePage } from "./Add_Restaurant";
-import { NavBar } from "./Navbar";
 
+//import sample restaurant data
+
+import SAMPLE_RESTAURANTS from './../data/restaurants_seattle.json';
+console.log(SAMPLE_RESTAURANTS);
 
 export default function App() {
   // define arrays for testing
@@ -24,7 +27,7 @@ export default function App() {
         <Routes>
           {/* default to Home page */}
           <Route path="/" element={
-            <HomePage foodList={foodList} tagList={tagList} restaurantList={restaurantList}/>
+            <HomePage foodList={foodList} tagList={tagList} restaurantList={SAMPLE_RESTAURANTS}/>
           } />
           <Route path="share" element={
             <SharePage tagList={tagList}/>
