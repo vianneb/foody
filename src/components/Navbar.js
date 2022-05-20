@@ -28,10 +28,9 @@ export function SearchNavBar(props) {
                 <input type="checkbox" id="checkbox_toggle" className="checkbox" />
                 <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
                 <ul id="menu" className="menu" style={{ float: "right" }}>
-                    <Link className="hover-link" to="/">Home</Link>
-                    <Link className="hover-link" to="/share">Share</Link>
-                    <Link className="hover-link" to="/search">Search</Link>
-                    {/* <li><a href="/list">My List</a></li>  */}
+                    <li><Link className="hover-link" to="/">Home</Link></li>
+                    <li><Link className="hover-link" to="/share">Share</Link></li>
+                    <li><Link className="hover-link" to="/search">Search</Link></li>
                 </ul>
 
             </div>
@@ -60,10 +59,9 @@ export function NavBar(props) {
                 <input type="checkbox" id="checkbox_toggle" className="checkbox" />
                 <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>
                 <ul id="menu" className="menu" style={{ float: "right" }}>
-                    <Link className="hover-link" to="/">Home</Link>
-                    <Link className="hover-link" to="/share">Share</Link>
-                    <Link className="hover-link" to="/search">Search</Link>
-                    {/* <li><a href="/list">My List</a></li>  */}
+                    <li><Link className="hover-link" to="/">Home</Link></li>
+                    <li><Link className="hover-link" to="/share">Share</Link></li>
+                    <li><Link className="hover-link" to="/search">Search</Link></li>
                 </ul>
 
             </div>

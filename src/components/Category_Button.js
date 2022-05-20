@@ -4,7 +4,7 @@ export function CategoryButton(props) {
 
     return (
         <div className="d-flex col-md-12 col-xl-6">
-            <a className={"card mb-4 w-100 bg-c-orange stretched-link text-dec" + props.classList} href="#">
+            <a className={"card mb-4 w-100 bg-c-orange stretched-link text-dec"} href="#">
                 <div className="card-body">
                     <h3 className="card-title text-center txt-c-white">{props.tag}</h3>
                 </div>
@@ -16,7 +16,7 @@ export function CategoryButton(props) {
 export function CategoryList(props) {
 
     let categoryList = props.tagList.map((tag) => {
-        let component = <CategoryButton key={tag} tag={tag} classList={props.classList}/>
+        let component = <CategoryButton key={tag} tag={tag} />
         return component;
     })
 
