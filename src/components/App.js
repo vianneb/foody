@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { HomePage } from "./Home";
 import { SharePage } from "./Add_Restaurant";
+import { SearchPage } from "./Search";
 
 
 
@@ -24,6 +25,9 @@ export default function App(props) {
           } />
           <Route path="share" element={
             <SharePage tagList={tagList}/>
+          } />
+          <Route path="search" element={
+            <SearchPage restaurantList={props.restaurantList}/>
           } />
         </Routes>
         

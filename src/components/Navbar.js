@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import material icons
 import SearchIcon from '@mui/icons-material/Search';
 
-export function HomeNavBar(props) {
+export function SearchNavBar(props) {
 
     //define state variables
     const [input, setInput] = useState('');
@@ -30,6 +30,7 @@ export function HomeNavBar(props) {
                 <ul id="menu" className="menu" style={{ float: "right" }}>
                     <Link className="hover-link" to="/">Home</Link>
                     <Link className="hover-link" to="/share">Share</Link>
+                    <Link className="hover-link" to="/search">Search</Link>
                     {/* <li><a href="/list">My List</a></li>  */}
                 </ul>
 
@@ -61,6 +62,7 @@ export function NavBar(props) {
                 <ul id="menu" className="menu" style={{ float: "right" }}>
                     <Link className="hover-link" to="/">Home</Link>
                     <Link className="hover-link" to="/share">Share</Link>
+                    <Link className="hover-link" to="/search">Search</Link>
                     {/* <li><a href="/list">My List</a></li>  */}
                 </ul>
 

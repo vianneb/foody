@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HomeNavBar } from "./Navbar";
+import { NavBar } from "./Navbar";
 import { CategoryList } from "./Category_Button";
 import { FoodCardList } from "./Food_Card";
 import { RestaurantList } from "./Restaurant_Card";
@@ -11,39 +11,6 @@ let classList = "";
 
 export function HomePage(props) {
 
-  // display variable
-  
-
-  //interactivity
-
-      //declare state variables
-      const [searchQuery, setSearchQuery] = useState(''); //represents input
-      const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
-
-      //callback
-      const handleSearch = (newSearchQuery) => {
-
-        if (newSearchQuery != undefined && newSearchQuery != "") {
-          classList = " display-none";
-        }
-
-        newSearchQuery = newSearchQuery.toLowerCase();
-        setSearchQuery(newSearchQuery);
-
-        let restaurantsCopy = props.restaurantList.filter((restaurant) => {
-          if (newSearchQuery == '' ) {
-            return true;
-          } else {
-            return restaurant.Name.toLowerCase().includes(newSearchQuery);
-          }
-          
-        })
-  
-        setFilteredRestaurants(restaurantsCopy);
-  
-    }
-
-    console.log(classList)
 
   // define arrays for testing
   let foodList = [
@@ -58,10 +25,10 @@ export function HomePage(props) {
   return (
     <div className="App">
       <div className="main-body">
-        <HomeNavBar handleSearch={handleSearch}/>
+        <NavBar />
         <FoodCardList foodList={foodList} classList={classList}/>
         <CategoryList tagList={props.tagList} classList={classList}/>
-        <RestaurantList restaurantList={filteredRestaurants} classList={classList}/>
+        <RestaurantList restaurantList={props.restaurantList} classList={classList}/>
       </div>
     </div>
   );
