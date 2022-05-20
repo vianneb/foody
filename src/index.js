@@ -8,11 +8,14 @@ import './index.css';
 
 import App from './components/App';
 
+//import sample restaurant data
+import SAMPLE_RESTAURANTS from './data/restaurants_seattle.json';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App />
+            <App restaurantList={SAMPLE_RESTAURANTS}/>
         </BrowserRouter>
     </React.StrictMode>
 );

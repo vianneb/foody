@@ -38,7 +38,7 @@ export function RestaurantList(props) {
   return (
     <div className="container mt-4 mb-4">
       <div className="row">
-        <h1>Near Me</h1>
+        <h1 className={props.classList}>Near Me</h1>
         {restaurantItems}
       </div>
     </div>

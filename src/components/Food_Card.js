@@ -4,8 +4,8 @@ import { OrangeButton } from "./Orange_Button";
 
 export function FoodCard(props) {
   return (
-    <div className="d-flex col-md-6 col-xl-3">
-      <div className="card mb-4 hover-c-yellow">
+    <div className="d-flex col-md-6 col-xl-3 " >
+      <div className={"card mb-4 hover-c-yellow " + props.classList}>
         <div className="card-body">
           <div className="row">
             <div className="col-sm-auto col-xl-12">
@@ -25,8 +25,10 @@ export function FoodCard(props) {
 }
 
 export function FoodCardList(props) {
+  console.log(props.classList)
+  console.log(typeof props.classList)
   let foodItems = props.foodList.map((foodObj) => {
-    let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
+    let component = <FoodCard key={foodObj.title} foodObj={foodObj} classList={props.classList}/>
     return component
   })
 
