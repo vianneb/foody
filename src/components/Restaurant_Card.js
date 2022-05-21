@@ -54,7 +54,7 @@ export function RestaurantCard(props) {
                 <p>{props.restaurant.Area}</p>
               </div>
               <div>
-              <Link to="/details"><OrangeButton text={"More Information"} onClick={handleClick}/></Link>
+              <Link to="/details"><button className="btn orange-btn btn-dark" href="#" onClick={handleClick}>{"More Information"}</button></Link>
               </div>
             </div>
           </div>

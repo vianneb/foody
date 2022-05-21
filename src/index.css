@@ -9,14 +9,16 @@
     padding-bottom: 25px;
 }
 
-.like-button {
+/* can delete */
+
+/* .like-button {
     padding: 0;
 }
 
 .like-button .material-icons {
     position: relative;
     top: 0px;
-}
+} */
 
 h1,
 h2 {
@@ -46,7 +48,7 @@ h2 {
     color: white;
 }
 
-button.orange-btn {
+.orange-btn {
     background-color: #d35400;
 }
 

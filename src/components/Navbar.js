@@ -39,7 +39,7 @@ export function SearchNavBar(props) {
 
                 <form style={{ textAlign: "center" }} id="form search-bar" className="w-100">
                     <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput}/>
-                    <button className="btn" onClick={handleClick}><SearchIcon /></button>
+                    <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
                 </form>
 
             </div>
