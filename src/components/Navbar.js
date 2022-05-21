@@ -54,7 +54,7 @@ export function NavBar(props) {
 
             <h1 className="logo" style={{ textAlign: "left" }}>Foody</h1>
 
-            <div className="nav-links">
+            <div id="nav" className="nav-links">
 
                 <input type="checkbox" id="checkbox_toggle" className="checkbox" />
                 <label hmtlfor="checkbox_toggle" className="hamburger" id="hamburger">&#9776;</label>

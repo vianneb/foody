@@ -11,6 +11,7 @@ export function SearchPage(props) {
     const [searchQuery, setSearchQuery] = useState(''); //represents input
     const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
 
+
     //callback
     const handleSearch = (newSearchQuery) => {
 
@@ -33,7 +34,7 @@ export function SearchPage(props) {
     return(
         <div className="main-body">
             <SearchNavBar handleSearch={handleSearch}/>
-            <RestaurantList restaurantList={filteredRestaurants} classList={" display-none"}/>
+            <RestaurantList restaurantList={filteredRestaurants} setSelectedRestaurant={props.setSelectedRestaurant}/>
         </div>
         
     )

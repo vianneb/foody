@@ -9,8 +9,17 @@
     padding-bottom: 25px;
 }
 
+.like-button {
+    padding: 0;
+}
 
-h1, h2{
+.like-button .material-icons {
+    position: relative;
+    top: 0px;
+}
+
+h1,
+h2 {
     margin: 0 0 8px;
     font-size: 32px;
 }
@@ -29,15 +38,15 @@ h1, h2{
 }
 
 .bg-c-orange {
-    background-color: #ff922c; 
-    
+    background-color: #ff922c;
+
 }
 
 .txt-c-white {
     color: white;
 }
 
-.btn {
+button.orange-btn {
     background-color: #d35400;
 }
 
@@ -67,7 +76,7 @@ h1.logo {
     font-weight: 900;
 }
 
-input.search{
+input.search {
     width: 70%;
 }
 
@@ -101,6 +110,7 @@ button {
 footer {
     margin-left: 2rem;
 }
+
 /*RESPONSIVE NAVBAR MENU STARTS*/
 div.nav-links input[type=checkbox] {
     display: none;
@@ -124,7 +134,7 @@ li {
     z-index: 9999;
 }
 
-ul.menu{
+ul.menu {
     display: none;
     position: absolute;
     background-color: #FFDB72;
@@ -171,15 +181,15 @@ h1.logo {
 }
 
 /* APPLYING MEDIA QUERIES */
-@media (min-width: 768px) {  
+@media (min-width: 768px) {
 
-    
+
     .hamburger {
         display: none;
         font-size: 24px;
         user-select: none;
     }
-    
+
 
     /* LOGO */
     .logo {

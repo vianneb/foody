@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export function ExploreRestaurantsButton(props) {
   return (
-    <div class="container mt-4">
-      <div class="row">
+    <div className="container mt-4">
+      <div className="row">
         <div className="d-flex col-md-12 col-xl-12">
           <div className="card mb-4 mx-auto w-100 ">
             <div className="card-body">
@@ -30,6 +30,15 @@ export function ExploreRestaurantsButton(props) {
 }
 
 export function RestaurantCard(props) {
+
+  const currentRestaurant = props.restaurant
+
+    //onClick callback
+    const handleClick = () => {
+      console.log(props.restaurant);
+      props.setSelectedRestaurant(currentRestaurant);
+    }
+
   return (
     <div className="d-flex col-md-12 col-xl-12">
       <div className="card mb-4 w-100">
@@ -45,7 +54,7 @@ export function RestaurantCard(props) {
                 <p>{props.restaurant.Area}</p>
               </div>
               <div>
-                <OrangeButton text="More Information" />
+              <Link to="/details"><OrangeButton text={"More Information"} onClick={handleClick}/></Link>
               </div>
             </div>
           </div>
@@ -58,15 +67,15 @@ export function RestaurantCard(props) {
 
 
 export function RestaurantList(props) {
+
   let restaurantItems = props.restaurantList.map((restaurant) => {
-    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} />
+    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant}/>
     return component;
   })
 
   return (
     <div className="container mt-4 mb-4">
       <div className="row">
-        <h1 className={props.classList}>Near Me</h1>
         {restaurantItems}
       </div>
     </div>
