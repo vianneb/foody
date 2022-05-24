@@ -14,8 +14,8 @@ export function MoreInformationPage(props) {
         buttonColor = "red";
 
     return (
-        <div>
-            <body className="main-body">
+        <div className="main-body">
+            
                 <NavBar />
                 <div className="d-flex ms-3">
                     <h1>{props.selectedRestaurant.Name}</h1>
@@ -32,7 +32,7 @@ export function MoreInformationPage(props) {
                 </div>
                 <OrangeButtonList tagList={props.selectedRestaurant.Category} />
                 <OrangeButtonList tagList={props.selectedRestaurant.Services} />
-            </body>
+          
 
         </div>
     )
