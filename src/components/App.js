@@ -17,7 +17,6 @@ export default function App(props) {
   // to track when users click more information button
   const [selectedRestaurant, setSelectedRestaurant] = useState('');
 
-  //callback
   // callback
   const handleSelected = (newRestaurant) => {
     props.setSelectedRestaurant(newRestaurant);
@@ -43,6 +42,7 @@ export default function App(props) {
           <Route path="details" element={
             <MoreInformationPage selectedRestaurant={selectedRestaurant}/>
           } />
+
         </Routes>
       </div>
     </div>

@@ -44,6 +44,7 @@ export function SearchNavBar(props) {
                             <li><Link className="hover-link nav-links" to="/">Home</Link></li>
                             <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
                             <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
+                            <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -79,6 +80,7 @@ export function NavBar(props) {
                 <li><Link className="hover-link nav-links" to="/">Home</Link></li>
                 <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
                 <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
+                <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
             </ul>
         </nav>
     )

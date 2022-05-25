@@ -25,8 +25,6 @@ export function FoodCard(props) {
 }
 
 export function FoodCardList(props) {
-  console.log(props.classList)
-  console.log(typeof props.classList)
   let foodItems = props.foodList.map((foodObj) => {
     let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
     return component
