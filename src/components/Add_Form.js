@@ -9,6 +9,7 @@ export function CheckBox(props) {
 
     )
 }
+
 export function CheckBoxList(props) {
     let checkboxItems = props.tagList.map((tag) => {
         let component = <CheckBox key={tag} tag={tag} />
@@ -41,12 +42,8 @@ export function AddForm(props) {
                     <div className="textbox">
 
                         <div className="form-group">
-                            <label form="addressInput" className="margin-t bigger-text">Enter Restaurant Address</label>
-                            <input type="text" className="form-control" id="addressInput1" placeholder="Address Line 1"></input>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" className="form-control" id="addressInput2" placeholder="Address Line 2"></input>
+                            <label form="addressInput" className="margin-t bigger-text">Enter Restaurant Address or Area</label>
+                            <input type="text" className="form-control" id="addressInput" placeholder="Address or Area"></input>
                         </div>
 
                     </div>
@@ -63,21 +60,90 @@ export function AddForm(props) {
                     </div>
                 </div>
 
-                <div className="container checkbox">
+                <div className="container">
 
-                    <p className="margin-t bigger-text">Tags</p>
+                    <div className="textbox">
 
+                        <div className="form-group">
+                            <label form="cuisineInput" className="margin-t bigger-text">Enter Restaurant Cuisine</label>
+                            <input type="text" className="form-control" id="cuisineInput" placeholder="Cuisine"></input>
+                        </div>
 
-                    <CheckBoxList tagList={props.tagList}/>
+                    </div>
+
+                </div>
+
+                {/* Type of services examples include outdoor dining, delivery, takeout, etc. */}
+                <div className="container">
+
+                    <div className="textbox">
+
+                        <div className="form-group">
+                            <label form="servicesInput" className="margin-t bigger-text">Enter Restaurant Services (separated by commas)</label>
+                            <input type="text" className="form-control" id="servicesInput" placeholder="Services"></input>
+                        </div>
+
+                    </div>
 
                 </div>
 
                 <div className="container">
+                    <p className="margin-t bigger-text">Dietary Accomodations</p>
+                    <div>
+                        <div>
+                            <input type="checkbox" id="vegan" name="vegan" value="vegan" />
+                            <label for="vegan">Vegan</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free" />
+                            <label for="gluten-free">Gluten allergies</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="nut-free" name="nut-free" value="nut-free" />
+                            <label for="nut-free">Nut allergies</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
+                            <label for="diary-free">Diary allergies</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
+                            <label for="diary-free">Soy allergies</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
+                            <label for="diary-free">Shellfish &amp; fish allergies</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="container">
                     <p className="margin-t bigger-text">Price Range</p>
-                    <button className="button">$</button>
-                    <button className="button">$$</button>
-                    <button className="button">$$$</button>
-                    <button className="button">$$$$</button>
+                    <div>
+                        <input type="radio" id="$" name="price" value="$" />
+                        <label for="$">$</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="$$" name="price" value="$$" />
+                        <label for="$$">$$</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="$$$" name="price" value="$$$" />
+                        <label for="$$$">$$$</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="$$$$" name="price" value="$$$$" />
+                        <label for="$$$$">$$$$</label>
+                    </div>
                 </div>
 
                 <div className="d-flex container margin-t justify-content-center">
