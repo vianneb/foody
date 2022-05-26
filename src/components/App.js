@@ -10,8 +10,6 @@ import { MoreInformationPage } from "./More_Information";
 
 
 export default function App(props) {
-  //define arrays for testing
-  let tagList = ["Vegan", "Keto", "Dairy-free", "Gluten-free"];
 
   // declare state variables for more information page
   // to track when users click more information button
@@ -30,10 +28,10 @@ export default function App(props) {
         <Routes>
           {/* default to Home page */}
           <Route path="/" element={
-            <HomePage restaurantList={props.restaurantList} tagList={tagList} />
+            <HomePage restaurantList={props.restaurantList} />
           } />
           <Route path="share" element={
-            <SharePage tagList={tagList} />
+            <SharePage />
           } />
           <Route path="search" element={
             <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant}/>

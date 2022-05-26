@@ -11,18 +11,19 @@ export function HomePage(props) {
 
   // define arrays for testing
   let foodList = [
-    { title: "Burgers", img: "img/burger.jpg", description: "lorem ipsum" },
-    { title: "Dessert", img: "img/dessert.jpg", description: "lorem ipsum" },
-    { title: "Drinks", img: "img/coffee.jpg", description: "lorem ipsum" },
-    { title: "Snacks", img: "img/fries.jpg", description: "lorem ipsum" }];
+    { title: "American", img: "img/burger.jpg", description: "lorem ipsum" },
+    { title: "Italian", img: "img/pasta.jpg", description: "lorem ipsum" },
+    { title: "Mexican", img: "img/tacos.jpg", description: "lorem ipsum" },
+    { title: "Japanese", img: "img/sushi.jpg", description: "lorem ipsum" }];
 
+  let tagList = ["Vegan", "Gluten-free", "Dairy-free", "Nut-free", "Soy-free", "Seafood-free"];
 
   return (
     <div className="App">
       <div className="main-body">
         <NavBar />
         <FoodCardList foodList={foodList} />
-        <CategoryList tagList={props.tagList} />
+        <CategoryList tagList={tagList} />
         <ExploreRestaurantsButton />
       </div>
     </div>
