@@ -5,11 +5,11 @@ import { NavBar } from "./Navbar";
 
 export function SharePage(props) {
     return (
-        <div>
-            <body className="main-body">
-                <NavBar />
-                <AddForm tagList={props.tagList} />
-            </body>
+        <div className="main-body">
+
+            <NavBar />
+            <AddForm tagList={props.tagList} />
+
         </div>
 
     )

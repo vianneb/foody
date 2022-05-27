@@ -17,7 +17,7 @@ export function MoreInformationPage(props) {
         <div className="main-body">
             
                 <NavBar />
-                <div className="d-flex ms-3">
+                <div className="d-flex ms-3 mt-4">
                     <h1>{props.selectedRestaurant.Name}</h1>
                     <button className="btn like-button" onClick={handleClick}>
                         <span className="material-icons" style={{ color: buttonColor }}>favorite_border</span>

@@ -48,7 +48,7 @@ export function RestaurantCard(props) {
               <div><img className="card-img-top pb-3" src={props.restaurant.img}/></div>
             </div> */}
             <div className=" col-md-8 col-xl-8">
-              <h2 className="card-title">{props.restaurant.Name}</h2>
+              <h3 className="card-title">{props.restaurant.Name}</h3>
               <div className="d-flex">
                 <span className="material-icons">place</span>
                 <p>{props.restaurant.Area}</p>

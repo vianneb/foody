@@ -30,33 +30,37 @@ export function SearchNavBar(props) {
     }
 
     return (
+        <div>
+            <nav className="NavbarItems">
+                <div className="grid">
+                    <div className="row">
+                        <div className="d-flex">
+                            <h1 className="navbar-logo">Foody</h1>
+                            <div className="menu-icon" onClick={handleHamburgerClick}>
+                                <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                            </div>
 
-        <nav className="NavbarItems">
-            <div className="grid">
-                <div className="row">
-                    <div className="d-flex">
-                        <h1 className="navbar-logo">Foody</h1>
-                        <div className="menu-icon" onClick={handleHamburgerClick}>
-                            <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                            <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
+                                <li><Link className="hover-link nav-links" to="/">Home</Link></li>
+                                <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
+                                <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
+                                <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
+                            </ul>
                         </div>
-
-                        <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
-                            <li><Link className="hover-link nav-links" to="/">Home</Link></li>
-                            <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
-                            <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
-                            <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
-                        </ul>
                     </div>
-                </div>
 
-                <div className="row search-form">
-                    <form style={{ textAlign: "center" }} id="form search-bar" className="w-100">
-                        <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput} />
-                        <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
-                    </form>
+
                 </div>
+            </nav>
+
+            <h2 className="text-center mt-4">Search Restaurants</h2>
+            <div className="row search-form">
+                <form style={{ textAlign: "center" }} id="form search-bar" className="w-100">
+                    <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput} />
+                    <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
+                </form>
             </div>
-        </nav>
+        </div>
     )
 }
 
