@@ -1,27 +1,27 @@
 import React from "react";
 
-export function CheckBox(props) {
-    return (
-        <div>
-            <input type="checkbox" id={props.tag} name={props.tag} value={props.tag}></input>
-            <label for={props.tag}>{props.tag}</label><br />
-        </div>
+// export function CheckBox(props) {
+//     return (
+//         <div>
+//             <input type="checkbox" id={props.tag} name={props.tag} value={props.tag}></input>
+//             <label for={props.tag}>{props.tag}</label><br />
+//         </div>
 
-    )
-}
+//     )
+// }
 
-export function CheckBoxList(props) {
-    let checkboxItems = props.tagList.map((tag) => {
-        let component = <CheckBox key={tag} tag={tag} />
-        return component;
-    })
+// export function CheckBoxList(props) {
+//     let checkboxItems = props.tagList.map((tag) => {
+//         let component = <CheckBox key={tag} tag={tag} />
+//         return component;
+//     })
 
-    return (
-        <div action="#" className="checkbox">
-            {checkboxItems}
-        </div>
-    )
-}
+//     return (
+//         <div action="#" className="checkbox">
+//             {checkboxItems}
+//         </div>
+//     )
+// }
 
 export function AddForm(props) {
     return (
@@ -42,7 +42,7 @@ export function AddForm(props) {
                     <div className="textbox">
 
                         <div className="form-group">
-                            <label form="addressInput" className="margin-t bigger-text">Enter Restaurant Address or Area</label>
+                            <label htmlFor="addressInput" className="margin-t bigger-text">Enter Restaurant Address or Area</label>
                             <input type="text" className="form-control" id="addressInput" placeholder="Address or Area"></input>
                         </div>
 
@@ -65,7 +65,7 @@ export function AddForm(props) {
                     <div className="textbox">
 
                         <div className="form-group">
-                            <label form="cuisineInput" className="margin-t bigger-text">Enter Restaurant Cuisine</label>
+                            <label htmlFor="cuisineInput" className="margin-t bigger-text">Enter Restaurant Cuisine</label>
                             <input type="text" className="form-control" id="cuisineInput" placeholder="Cuisine"></input>
                         </div>
 
@@ -79,7 +79,7 @@ export function AddForm(props) {
                     <div className="textbox">
 
                         <div className="form-group">
-                            <label form="servicesInput" className="margin-t bigger-text">Enter Restaurant Services (separated by commas)</label>
+                            <label htmlFor="servicesInput" className="margin-t bigger-text">Enter Restaurant Services (separated by commas)</label>
                             <input type="text" className="form-control" id="servicesInput" placeholder="Services"></input>
                         </div>
 
