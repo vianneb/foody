@@ -32,7 +32,7 @@ export function AddForm(props) {
                 <div className="container">
                     <div className="textbox">
                         <div className="form-group">
-                            <label for="nameInput" className="margin-t bigger-text">Enter Restaurant Name</label>
+                            <label htmlFor="nameInput" className="margin-t bigger-text">Enter Restaurant Name</label>
                             <input type="text" className="form-control" id="nameInput" placeholder="Name"></input>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { HomePage } from "./Home";
 import { SharePage } from "./Add_Restaurant";
@@ -37,9 +37,12 @@ export default function App(props) {
             <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant}/>
           } />
 
-          <Route path="details" element={
+          <Route path="/details/:restaurantName" element={
             <MoreInformationPage selectedRestaurant={selectedRestaurant}/>
-          } />
+          }/>  
+
+          {/* route to handle incorrect URLS */}
+          <Route path="*" element={<Navigate to="/"/>} />
 
         </Routes>
       </div>

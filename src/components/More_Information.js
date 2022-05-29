@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavBar } from './Navbar';
 import { OrangeButtonList } from './Orange_Button';
 
+
 export function MoreInformationPage(props) {
     const [isLiked, setIsLiked] = useState(false);
 
@@ -10,10 +11,13 @@ export function MoreInformationPage(props) {
     }
 
     let buttonColor = "grey"
-    if (isLiked)
+    
+    if (isLiked) {
         buttonColor = "red";
+    }
 
     return (
+
         <div className="main-body">
             
                 <NavBar />

@@ -16,7 +16,7 @@ export function ExploreRestaurantsCard(props) {
                 <div className=" col-md-8 col-xl-8">
                   <h2 className="card-title">Explore Seattle Restaurants</h2>
                   <div>
-                  <Link className="hover-link" to="/search"><OrangeButton text="View" /></Link>
+                    <Link className="hover-link" to="/search"><OrangeButton text="View" /></Link>
                   </div>
                 </div>
               </div>
@@ -33,11 +33,13 @@ export function RestaurantCard(props) {
 
   const currentRestaurant = props.restaurant
 
-    //onClick callback
-    const handleClick = () => {
-      console.log(props.restaurant);
-      props.setSelectedRestaurant(currentRestaurant);
-    }
+  //onClick callback
+  const handleClick = () => {
+    console.log(props.restaurant);
+    props.setSelectedRestaurant(currentRestaurant);
+  }
+
+  const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
   return (
     <div className="d-flex col-md-12 col-xl-12">
@@ -54,7 +56,7 @@ export function RestaurantCard(props) {
                 <p>{props.restaurant.Area}</p>
               </div>
               <div>
-              <Link to="/details"><button className="btn orange-btn btn-dark" href="#" onClick={handleClick}>{"More Information"}</button></Link>
+                <Link to={"/details/" + urlParam}><button className="btn orange-btn btn-dark" href="#" onClick={handleClick}>{"More Information"}</button></Link>
               </div>
             </div>
           </div>
@@ -69,7 +71,7 @@ export function RestaurantCard(props) {
 export function RestaurantList(props) {
 
   let restaurantItems = props.restaurantList.map((restaurant) => {
-    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant}/>
+    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant} />
     return component;
   })
 
