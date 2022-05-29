@@ -1,5 +1,4 @@
 import React from "react";
-import { OrangeButton } from "./Orange_Button";
 
 
 export function FoodCard(props) {
@@ -14,7 +13,7 @@ export function FoodCard(props) {
             <div className="col-sm">
               <h2 className="card-title">{props.foodObj.title}</h2>
               <p className="card-text">{props.foodObj.description}</p>
-              <OrangeButton text="Explore"/>
+              <button className="btn orange-btn btn-dark" href="#">Explore</button>
             </div>
           </div>
         </div>

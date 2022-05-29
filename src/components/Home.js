@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavBar } from "./Navbar";
 import { CategoryList } from "./Category_Button";
 import { FoodCardList } from "./Food_Card";
-import { RestaurantList } from "./Restaurant_Card";
-import { ExploreRestaurantsButton } from "./Restaurant_Card";
+import { ExploreRestaurantsCard } from "./Restaurant_Card";
 
 
 export function HomePage(props) {
@@ -24,7 +23,7 @@ export function HomePage(props) {
         <NavBar />
         <FoodCardList foodList={foodList} />
         <CategoryList tagList={tagList} />
-        <ExploreRestaurantsButton />
+        <ExploreRestaurantsCard />
       </div>
     </div>
   );

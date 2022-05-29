@@ -2,7 +2,7 @@ import React from "react";
 import { OrangeButton } from "./Orange_Button";
 import { Link } from "react-router-dom";
 
-export function ExploreRestaurantsButton(props) {
+export function ExploreRestaurantsCard(props) {
   return (
     <div className="container mt-4">
       <div className="row">
