@@ -11,7 +11,7 @@ export function ExploreRestaurantsCard(props) {
             <div className="card-body">
               <div className="row">
                 <div className="col-md-4 col-xl-4">
-                  <div><img className="card-img-top pb-3" src={"img/seattle.jpg"} /></div>
+                  <div><img className="card-img-top pb-3" src={"img/seattle.jpg"} alt="seattle skyline featuring the Space Needle during sunset"/></div>
                 </div>
                 <div className=" col-md-8 col-xl-8">
                   <h2 className="card-title">Explore Seattle Restaurants</h2>

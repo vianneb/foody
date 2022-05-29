@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 export function FoodCard(props) {
   return (
     <div className="d-flex col-md-6 col-xl-3 " >
@@ -8,7 +9,7 @@ export function FoodCard(props) {
         <div className="card-body">
           <div className="row">
             <div className="col-sm-auto col-xl-12">
-              <div><img className="card-img-top pb-3" src={props.foodObj.img} /></div>
+              <div><img className="card-img-top pb-3" src={props.foodObj.img} alt={props.foodObj.img.substring(props.foodObj.img.indexOf("/"), props.foodObj.img.indexOf("."))}/></div>
             </div>
             <div className="col-sm">
               <h2 className="card-title">{props.foodObj.title}</h2>
