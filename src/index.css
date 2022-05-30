@@ -94,15 +94,8 @@ footer {
     margin-left: 2rem;
 }
 
-button.favorite-btn {
-    display: inline-flex;
-    justify-content: end;
+button.like-button {
     margin-top: 0;
-}
-
-button.is-favorite {
-    background-color:#fde59c;
-    color: black;
 }
 
 /* pagination stuff */
