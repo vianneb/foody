@@ -85,7 +85,7 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} />
+            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList}/>
             <ReactPaginate 
                 previousLabel={"<"}
                 nextLabel={">"}

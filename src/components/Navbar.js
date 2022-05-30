@@ -12,19 +12,6 @@ export function SearchNavBar(props) {
         setIsClicked(!isClicked);
     }
 
-
-    //search interactivity
-    // const [input, setInput] = useState('');
-
-    // const handleInput = (event) => {
-    //     setInput(event.target.value);
-    // }
-
-    // const handleClick = (event) => {
-    //     event.preventDefault();
-    //     props.handleSearch(input);
-    // }
-
     return (
         <div>
             <nav className="NavbarItems">
@@ -40,7 +27,7 @@ export function SearchNavBar(props) {
                                 <li><Link className="hover-link nav-links" to="/">Home</Link></li>
                                 <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
                                 <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
-                                <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
+                                <li><Link className="hover-link nav-links" to="/mylist">My List</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -80,7 +67,7 @@ export function NavBar(props) {
                 <li><Link className="hover-link nav-links" to="/">Home</Link></li>
                 <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
                 <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
-                <li><Link className="hover-link nav-links" to="/list">My List</Link></li>
+                <li><Link className="hover-link nav-links" to="/mylist">My List</Link></li>
             </ul>
         </nav>
     )

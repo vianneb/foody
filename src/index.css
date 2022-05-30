@@ -94,6 +94,17 @@ footer {
     margin-left: 2rem;
 }
 
+button.favorite-btn {
+    display: inline-flex;
+    justify-content: end;
+    margin-top: 0;
+}
+
+button.is-favorite {
+    background-color:#fde59c;
+    color: black;
+}
+
 /* pagination stuff */
 .paginationBttns {
     list-style: none;
