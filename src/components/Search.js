@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
+import ReactPaginate from 'react-paginate';
 
 import { SearchNavBar } from "./Navbar";
 import { RestaurantList } from "./Restaurant_Card";
@@ -8,9 +9,10 @@ import { RestaurantList } from "./Restaurant_Card";
 import SearchIcon from '@mui/icons-material/Search';
 
 export function SearchPage(props) {
+    //state varibles for pagination
+    const [pageNumber, setPageNumber] = useState(0);
 
-    //interactivity
-    //declare state variables
+    //state variables for search interactivity
     const [searchQuery, setSearchQuery] = useState(''); //represents input
     const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
     const [input, setInput] = useState('');
@@ -55,7 +57,15 @@ export function SearchPage(props) {
 
     }
 
+    //pagination code
+    const restaurantsperPage = 5;
+    const pagesVisited = pageNumber * restaurantsperPage;
+    const displayRestaurants = filteredRestaurants.slice(pagesVisited, pagesVisited + restaurantsperPage);
+    const pageCount = Math.ceil(filteredRestaurants.length / restaurantsperPage);
 
+    const changePage = ({selected}) => {
+        setPageNumber(selected);
+    }
 
     return (
         <div className="main-body">
@@ -75,8 +85,18 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-
-            <RestaurantList restaurantList={filteredRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} />
+            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} />
+            <ReactPaginate 
+                previousLabel={"<"}
+                nextLabel={">"}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={"paginationBttns"}
+                previousLinkClassName={"previousBttn"}
+                nextLinkClassName={"nextBttn"}
+                activeClassName={"paginationActive"}
+                disabledClassName={"paginationDisabled"}
+            />
         </div>
 
     )

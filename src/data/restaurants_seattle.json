@@ -20,12 +20,12 @@
     "Searched City": "Seattle"
   },
   {
-    "Name": "Biscuit Bitch",
-    "Star": 4,
-    "Stars_count": 4046,
-    "Price": "$",
-    "Area": "Downtown",
-    "Category": ["Breakfast & Brunch", "Coffee & Tea", "Southern"],
+    "Name": "Ishoni Yakiniku",
+    "Star": 4.5,
+    "Stars_count": 59,
+    "Price": "n/a",
+    "Area": "Capitol Hill",
+    "Category": ["Barbeque", "Japanese"],
     "Services": ["Outdoor dining", "Delivery", "Takeout"],
     "Searched City": "Seattle"
   },
@@ -40,13 +40,63 @@
     "Searched City": "Seattle"
   },
   {
-    "Name": "The Walrus and the Carpenter",
+    "Name": "Fogón Cocina Mexicana",
+    "Star": 4.5,
+    "Stars_count": 1601,
+    "Price": "$$",
+    "Area": "Capitol Hill",
+    "Category": ["Mexican"],
+    "Services": ["Live wait time: 0 mins", "Outdoor dining", "Delivery", "Takeout"],
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Six Seven Restaurant",
     "Star": 4,
-    "Stars_count": 1680,
+    "Stars_count": 1072,
     "Price": "$$$",
-    "Area": "Ballard",
-    "Category": ["Seafood", "Tapas/Small Plates"],
-    "Services": ["Outdoor dining", "Takeout"],
+    "Area": "Interbay",
+    "Category": ["American (New)", "Seafood", "Cocktail Bars"],
+    "Services": ["Outdoor dining"],
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "List",
+    "Star": 4.5,
+    "Stars_count": 1948,
+    "Price": "$$",
+    "Area": "Belltown",
+    "Category": ["Tapas/Small Plates", "Cocktail Bars", "American (Traditional)"],
+    "Services": ["Delivery"],
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Tilikum Place Cafe",
+    "Star": 4.5,
+    "Stars_count": 2091,
+    "Price": "$$",
+    "Area": "Belltown",
+    "Category": ["American (New)", "Breakfast & Brunch", "Desserts"],
+    "Services": ["Outdoor dining", "Delivery", "Takeout"],
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Elliott’s Oyster House",
+    "Star": 4,
+    "Stars_count": 3658,
+    "Price": "$$$",
+    "Area": "Waterfront",
+    "Category": ["Seafood"],
+    "Services": ["Outdoor dining", "Delivery", "Takeout"],
+    "Searched City": "Seattle"
+  },
+  {
+    "Name": "Toulouse Petit Kitchen & Lounge",
+    "Star": 4,
+    "Stars_count": 4254,
+    "Price": "$$",
+    "Area": "Lower Queen Anne",
+    "Category": ["Breakfast & Brunch", "American (New)", "Seafood"],
+    "Services": ["Delivery", "Takeout"],
     "Searched City": "Seattle"
   }
 ]
