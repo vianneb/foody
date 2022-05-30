@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// import material icons
-import SearchIcon from '@mui/icons-material/Search';
-
 
 
 export function SearchNavBar(props) {
@@ -11,23 +8,22 @@ export function SearchNavBar(props) {
     const [isClicked, setIsClicked] = useState(false);
 
     //callback
-
     const handleHamburgerClick = () => {
         setIsClicked(!isClicked);
     }
 
 
     //search interactivity
-    const [input, setInput] = useState('');
+    // const [input, setInput] = useState('');
 
-    const handleInput = (event) => {
-        setInput(event.target.value);
-    }
+    // const handleInput = (event) => {
+    //     setInput(event.target.value);
+    // }
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        props.handleSearch(input);
-    }
+    // const handleClick = (event) => {
+    //     event.preventDefault();
+    //     props.handleSearch(input);
+    // }
 
     return (
         <div>
@@ -53,13 +49,13 @@ export function SearchNavBar(props) {
                 </div>
             </nav>
 
-            <h2 className="text-center mt-4">Search Restaurants</h2>
+            {/* <h2 className="text-center mt-4">Search Restaurants</h2>
             <div className="row search-form">
                 <form style={{ textAlign: "center" }} id="form search-bar" className="w-100">
                     <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput} />
                     <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -33,6 +33,7 @@ export default function App(props) {
           <Route path="share" element={
             <SharePage />
           } />
+          
           <Route path="search" element={
             <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant}/>
           } />
