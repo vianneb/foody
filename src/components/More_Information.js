@@ -8,6 +8,7 @@ export function MoreInformationPage(props) {
 
     const handleClick = (event) => {
         setIsLiked(!isLiked); //toggle
+        console.log("reached")
     }
 
     let buttonColor = "grey"
