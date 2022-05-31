@@ -92,32 +92,32 @@ export function AddForm(props) {
                     <div>
                         <div>
                             <input type="checkbox" id="vegan" name="vegan" value="vegan" />
-                            <label for="vegan">Vegan</label>
+                            <label htmlFor="vegan">Vegan</label>
                         </div>
 
                         <div>
                             <input type="checkbox" id="gluten-free" name="gluten-free" value="gluten-free" />
-                            <label for="gluten-free">Gluten allergies</label>
+                            <label htmlFor="gluten-free">Gluten allergies</label>
                         </div>
 
                         <div>
                             <input type="checkbox" id="nut-free" name="nut-free" value="nut-free" />
-                            <label for="nut-free">Nut allergies</label>
+                            <label htmlFor="nut-free">Nut allergies</label>
                         </div>
 
                         <div>
                             <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
-                            <label for="diary-free">Diary allergies</label>
+                            <label htmlFor="diary-free">Diary allergies</label>
                         </div>
 
                         <div>
                             <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
-                            <label for="diary-free">Soy allergies</label>
+                            <label htmlFor="diary-free">Soy allergies</label>
                         </div>
 
                         <div>
                             <input type="checkbox" id="diary-free" name="diary-free" value="diary-free" />
-                            <label for="diary-free">Shellfish &amp; fish allergies</label>
+                            <label htmlFor="diary-free">Shellfish &amp; fish allergies</label>
                         </div>
 
                     </div>
@@ -127,22 +127,22 @@ export function AddForm(props) {
                     <p className="margin-t bigger-text">Price Range</p>
                     <div>
                         <input type="radio" id="$" name="price" value="$" />
-                        <label for="$">$</label>
+                        <label htmlFor="$">$</label>
                     </div>
 
                     <div>
                         <input type="radio" id="$$" name="price" value="$$" />
-                        <label for="$$">$$</label>
+                        <label htmlFor="$$">$$</label>
                     </div>
 
                     <div>
                         <input type="radio" id="$$$" name="price" value="$$$" />
-                        <label for="$$$">$$$</label>
+                        <label htmlFor="$$$">$$$</label>
                     </div>
 
                     <div>
                         <input type="radio" id="$$$$" name="price" value="$$$$" />
-                        <label for="$$$$">$$$$</label>
+                        <label htmlFor="$$$$">$$$$</label>
                     </div>
                 </div>
 
