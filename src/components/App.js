@@ -18,6 +18,24 @@ export default function App(props) {
 
   //declare state variables to track My List
   const [myList, setMyList] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [restaurants, setRestaurants] = useState(props.restaurantList);
+
+  const favoriteRestaurant = (name) => {
+    const restaurantsCopy = restaurants.map((restaurant) => {
+
+      let copy = { ...restaurant };
+
+      if (copy.Name == name) {
+        copy.favorite = !isFavorite;
+      }
+
+      return copy;
+    })
+
+    setRestaurants(restaurantsCopy);
+  }
+
 
 
   return (
@@ -32,21 +50,21 @@ export default function App(props) {
           <Route path="share" element={
             <SharePage />
           } />
-          
+
           <Route path="search" element={
-            <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList}/>
+            <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} favoriteRestaurant={favoriteRestaurant} restaurants={restaurants}/>
           } />
 
           <Route path="details/:restaurantName" element={
-            <MoreInformationPage selectedRestaurant={selectedRestaurant}/>
-          }/> 
+            <MoreInformationPage selectedRestaurant={selectedRestaurant} />
+          } />
 
           <Route path="mylist" element={
-            <MyListPage myList={myList} setSelectedRestaurant={setSelectedRestaurant}/>
-          }/>
+            <MyListPage myList={myList} setSelectedRestaurant={setSelectedRestaurant} />
+          } />
 
           {/* route to handle incorrect URLS */}
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="*" element={<Navigate to="/" />} />
 
         </Routes>
       </div>

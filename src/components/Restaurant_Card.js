@@ -32,6 +32,7 @@ export function ExploreRestaurantsCard(props) {
 export function RestaurantCard(props) {
 
   const currentRestaurant = props.restaurant
+  
 
   //onClick callback
   const handleClick = () => {
@@ -41,25 +42,20 @@ export function RestaurantCard(props) {
 
   const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const handleFavoriteClick = () => {
+    props.favoriteRestaurant(currentRestaurant.Name);
 
-  const handleFavoriteClick = (event) => {
-    if (isFavorite) {
-      setIsFavorite(!isFavorite);
-
+    if (currentRestaurant.favorite) {
       //get restaurant info and remove from favorites list
       const currentFavorites = props.myList.filter((element) => {
         return element.Name != currentRestaurant.Name;
       });
-
       console.log(currentFavorites);
       props.setMyList(currentFavorites);
 
     } else {
-      setIsFavorite(!isFavorite);
 
       //get restaurant info and add to favorites list
-      //console.log(currentRestaurant);
       const currentFavorites = [...props.myList, currentRestaurant];
       console.log(currentFavorites);
       props.setMyList(currentFavorites);
@@ -67,7 +63,8 @@ export function RestaurantCard(props) {
   }
 
   let buttonColor = "grey"
-  if(isFavorite) {
+
+  if(currentRestaurant.favorite) {
     buttonColor = "red";
   }
 
@@ -140,8 +137,8 @@ export function FavoriteCard(props) {
 
 export function RestaurantList(props) {
 
-  let restaurantItems = props.restaurantList.map((restaurant) => {
-    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} />
+  let restaurantItems = props.restaurants.map((restaurant) => {
+    let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} />
     return component;
   })
 

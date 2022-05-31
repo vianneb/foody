@@ -63,9 +63,11 @@ export function SearchPage(props) {
     const displayRestaurants = filteredRestaurants.slice(pagesVisited, pagesVisited + restaurantsperPage);
     const pageCount = Math.ceil(filteredRestaurants.length / restaurantsperPage);
 
-    const changePage = ({selected}) => {
+    const changePage = ({ selected }) => {
         setPageNumber(selected);
     }
+
+    
 
     return (
         <div className="main-body">
@@ -85,8 +87,8 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList}/>
-            <ReactPaginate 
+            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} restaurants={props.restaurants}/>
+            <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
                 pageCount={pageCount}
