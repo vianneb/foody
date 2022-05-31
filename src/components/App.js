@@ -28,6 +28,8 @@ export default function App(props) {
 
       if (copy.Name == name) {
         copy.favorite = !isFavorite;
+        setIsFavorite(copy.favorite);
+        console.log(copy.favorite);
       }
 
       return copy;
