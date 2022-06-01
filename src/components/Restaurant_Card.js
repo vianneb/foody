@@ -45,6 +45,8 @@ export function RestaurantCard(props) {
   const handleFavoriteClick = () => {
     props.favoriteRestaurant(currentRestaurant.Name);
 
+    console.log(currentRestaurant.favorite);
+
     if (currentRestaurant.favorite) {
       //get restaurant info and remove from favorites list
       const currentFavorites = props.myList.filter((element) => {

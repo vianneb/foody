@@ -9,12 +9,13 @@ import { RestaurantList } from "./Restaurant_Card";
 import SearchIcon from '@mui/icons-material/Search';
 
 export function SearchPage(props) {
+
     //state varibles for pagination
     const [pageNumber, setPageNumber] = useState(0);
 
     //state variables for search interactivity
     const [searchQuery, setSearchQuery] = useState(''); //represents input
-    const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
+    
     const [input, setInput] = useState('');
 
     //state variables for alert messages
@@ -36,7 +37,7 @@ export function SearchPage(props) {
         newSearchQuery = newSearchQuery.toLowerCase();
         setSearchQuery(newSearchQuery);
 
-        let restaurantsCopy = props.restaurantList.filter((restaurant) => {
+        let restaurantsCopy = props.filteredRestaurants.filter((restaurant) => {
 
             if (searchQuery == "") {
                 return true;
@@ -49,19 +50,20 @@ export function SearchPage(props) {
 
         if (restaurantsCopy.length == 0) {
             setAlertMessage("No results");
-            setFilteredRestaurants(props.restaurantList);
+            props.setFilteredRestaurants(props.restaurants);
         } else {
-            setFilteredRestaurants(restaurantsCopy);
+            props.setFilteredRestaurants(restaurantsCopy);
         }
 
 
     }
 
+    
     //pagination code
     const restaurantsperPage = 5;
     const pagesVisited = pageNumber * restaurantsperPage;
-    const displayRestaurants = filteredRestaurants.slice(pagesVisited, pagesVisited + restaurantsperPage);
-    const pageCount = Math.ceil(filteredRestaurants.length / restaurantsperPage);
+    const displayRestaurants = props.filteredRestaurants.slice(pagesVisited, pagesVisited + restaurantsperPage);
+    const pageCount = Math.ceil(props.filteredRestaurants.length / restaurantsperPage);
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
@@ -71,7 +73,7 @@ export function SearchPage(props) {
 
     return (
         <div className="main-body">
-            <SearchNavBar handleSearch={handleSearch} />
+            <SearchNavBar />
             <h2 className="text-center mt-4">Search Restaurants</h2>
             <div className="row search-form">
                 <form style={{ textAlign: "center" }} id="form search-bar" className="w-100" >
@@ -87,7 +89,7 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-            <RestaurantList restaurantList={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} restaurants={props.restaurants}/>
+            <RestaurantList restaurants={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} />
             <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}

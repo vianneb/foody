@@ -19,10 +19,14 @@ export default function App(props) {
   //declare state variables to track My List
   const [myList, setMyList] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [restaurants, setRestaurants] = useState(props.restaurantList);
+
+  const [restaurantsArray, setRestaurantsArray] = useState(props.restaurantList);
+
+  //state for search results array 
+  const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
 
   const favoriteRestaurant = (name) => {
-    const restaurantsCopy = restaurants.map((restaurant) => {
+    const restaurantsCopy = filteredRestaurants.map((restaurant) => {
 
       let copy = { ...restaurant };
 
@@ -35,9 +39,39 @@ export default function App(props) {
       return copy;
     })
 
-    setRestaurants(restaurantsCopy);
+    setFilteredRestaurants(restaurantsCopy);
   }
 
+  
+
+  //define state for add restaurant form elements
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [imageFile, setImageFile] = useState('');
+  const [imageURL, setImageURL] = useState(undefined);
+  const [cuisine, setCuisine] = useState('');
+  const [category, setCategory] = useState('Vegan');
+  const [price, setPrice] = useState('$');
+
+  //callback for form onSubmit
+  const addRestaurant = (name, area, image, cuisine, category, price) => {
+    const newRestaurant = {
+      Name: name,
+      Area: area,
+      image: image,
+      cuisine: cuisine,
+      category: category,
+      price: price
+    }
+
+    const updatedRestaurants = [...restaurantsArray, newRestaurant];
+
+    console.log(updatedRestaurants);
+
+    setRestaurantsArray(updatedRestaurants);
+
+    return updatedRestaurants;
+  }
 
 
   return (
@@ -47,14 +81,32 @@ export default function App(props) {
         <Routes>
           {/* default to Home page */}
           <Route path="/" element={
-            <HomePage restaurantList={props.restaurantList} />
+            <HomePage />
           } />
           <Route path="share" element={
-            <SharePage />
+            <SharePage
+              name={name}
+              setName={setName}
+              address={address}
+              setAddress={setAddress}
+              imageFile={imageFile}
+              setImageFile={setImageFile}
+              imageURL={imageURL}
+              setImageURL={setImageURL}
+              cuisine={cuisine}
+              setCuisine={setCuisine}
+              category={category}
+              setCategory={setCategory}
+              price={price}
+              setPrice={setPrice}
+              addRestaurant={addRestaurant}
+              setFilteredRestaurants={setFilteredRestaurants}
+              restaurantsArray={restaurantsArray}
+            />
           } />
 
           <Route path="search" element={
-            <SearchPage restaurantList={props.restaurantList} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} favoriteRestaurant={favoriteRestaurant} restaurants={restaurants}/>
+            <SearchPage filteredRestaurants={filteredRestaurants} setFilteredRestaurants={setFilteredRestaurants} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} favoriteRestaurant={favoriteRestaurant} restaurantsArray={restaurantsArray} />
           } />
 
           <Route path="details/:restaurantName" element={
