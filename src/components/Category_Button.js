@@ -1,10 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export function CategoryButton(props) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/search");
+    }
 
     return (
         <div className="d-flex col-md-12 col-xl-6">
-            <a className={"card mb-4 w-100 bg-c-orange stretched-link text-dec"} href="">
+            <a className={"card mb-4 w-100 bg-c-orange stretched-link text-dec"} onClick={handleClick}>
                 <div className="card-body">
                     <h3 className="card-title text-center txt-c-white">{props.tag}</h3>
                 </div>

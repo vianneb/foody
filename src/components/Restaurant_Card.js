@@ -141,6 +141,7 @@ export function RestaurantList(props) {
 
   let restaurantItems = props.restaurants.map((restaurant) => {
     let component = <RestaurantCard key={restaurant.Name} restaurant={restaurant} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} />
+    console.log(restaurant);
     return component;
   })
 

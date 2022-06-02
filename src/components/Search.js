@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import ReactPaginate from 'react-paginate';
-
 import { SearchNavBar } from "./Navbar";
 import { RestaurantList } from "./Restaurant_Card";
+
 
 // import material icons
 import SearchIcon from '@mui/icons-material/Search';
@@ -39,10 +39,11 @@ export function SearchPage(props) {
 
         let restaurantsCopy = props.filteredRestaurants.filter((restaurant) => {
 
-            if (searchQuery == "") {
+            if (searchQuery === "") {
                 return true;
             } else {
-                return restaurant.Name.toLowerCase().includes(newSearchQuery);
+                let test = JSON.stringify(restaurant);
+                return test.toLowerCase().includes(newSearchQuery);
             }
 
 
@@ -55,9 +56,9 @@ export function SearchPage(props) {
             props.setFilteredRestaurants(restaurantsCopy);
         }
 
+        
 
     }
-
     
     //pagination code
     const restaurantsperPage = 5;
@@ -72,6 +73,7 @@ export function SearchPage(props) {
     
 
     return (
+
         <div className="main-body">
             <SearchNavBar />
             <h2 className="text-center mt-4">Search Restaurants</h2>
