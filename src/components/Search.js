@@ -37,7 +37,7 @@ export function SearchPage(props) {
         newSearchQuery = newSearchQuery.toLowerCase();
         setSearchQuery(newSearchQuery);
 
-        let restaurantsCopy = props.filteredRestaurants.filter((restaurant) => {
+        let restaurantsCopy = props.restaurantsArray.filter((restaurant) => {
 
             if (searchQuery === "") {
                 return true;
@@ -51,7 +51,7 @@ export function SearchPage(props) {
 
         if (restaurantsCopy.length == 0) {
             setAlertMessage("No results");
-            props.setFilteredRestaurants(props.restaurants);
+            props.setFilteredRestaurants(props.restaurantsArray);
         } else {
             props.setFilteredRestaurants(restaurantsCopy);
         }
