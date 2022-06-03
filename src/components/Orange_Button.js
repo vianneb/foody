@@ -6,17 +6,3 @@ export function OrangeButton(props) {
     )
     
 }
-
-export function OrangeButtonList(props) {
-
-    let buttonItems = props.tagList.map((tag) => {
-        let component = <OrangeButton key={tag} text={tag}/>
-        return component
-    })
-
-    return(
-        <div className="d-flex ">
-            {buttonItems}
-        </div>
-    )
-}

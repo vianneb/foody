@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavBar } from './Navbar';
-import { OrangeButtonList } from './Orange_Button';
+import { OrangeButton } from './Orange_Button';
 
 
 export function MoreInformationPage(props) {
@@ -22,9 +22,10 @@ export function MoreInformationPage(props) {
             <div className="d-flex ms-3">
                 <button className="button">{props.selectedRestaurant.Price}</button>
             </div>
-            <OrangeButtonList tagList={props.selectedRestaurant.Category} />
-            <OrangeButtonList tagList={props.selectedRestaurant.Services} />
-
+            <div className="d-flex">
+                <OrangeButton text={props.selectedRestaurant.Cuisine} />
+                <OrangeButton text={props.selectedRestaurant.Category}/>
+            </div>
 
         </div>
     )

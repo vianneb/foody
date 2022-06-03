@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { HomePage } from "./Home";
@@ -6,6 +6,10 @@ import { SharePage } from "./Add_Restaurant";
 import { SearchPage } from "./Search";
 import { MoreInformationPage } from "./More_Information";
 import { MyListPage } from "./My_List";
+
+import { getDatabase, ref, set as firebaseSet, onValue, push as firebasePush } from 'firebase/database';
+
+
 
 
 
@@ -20,10 +24,10 @@ export default function App(props) {
   const [myList, setMyList] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const [restaurantsArray, setRestaurantsArray] = useState(props.restaurantList);
+  const [restaurantsArray, setRestaurantsArray] = useState([]);
 
   //state for search results array 
-  const [filteredRestaurants, setFilteredRestaurants] = useState(props.restaurantList);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantsArray);
 
   const favoriteRestaurant = (name) => {
     const restaurantsCopy = filteredRestaurants.map((restaurant) => {
@@ -42,7 +46,7 @@ export default function App(props) {
     setFilteredRestaurants(restaurantsCopy);
   }
 
-  
+
 
   //define state for add restaurant form elements
   const [name, setName] = useState('');
@@ -53,24 +57,62 @@ export default function App(props) {
   const [category, setCategory] = useState('Vegan');
   const [price, setPrice] = useState('$');
 
+ 
+
+  useEffect(() => {
+
+    const db = getDatabase(); //database reference, not the database itself
+    const allRestaurantsRef = ref(db, "allRestaurants"); //another listener for restaurants array data
+    const offFunction = onValue(allRestaurantsRef, (snapshot) => {
+      const newValObj = snapshot.val();
+      console.log(newValObj);
+
+      //convert obj to array for rendering
+      const keys = Object.keys(newValObj);
+      console.log(keys);
+      const newObjArray = keys.map((keyString) => {
+
+        return newValObj[keyString];
+
+      })
+
+      console.log(newObjArray);
+
+      setRestaurantsArray(newObjArray);
+      setFilteredRestaurants(newObjArray);
+
+    })
+
+    //what to do when component unmounts (is removed, not shown)
+    const cleanup = () => {
+      //turn out the lights (remove the value listener)
+      offFunction();
+    }
+    //what should the effect hook callback return??
+    return cleanup;
+
+  }, [])
+
   //callback for form onSubmit
-  const addRestaurant = (name, area, image, cuisine, category, price) => {
+  const addRestaurant = (name, area, cuisine, category, price) => {
+
     const newRestaurant = {
       Name: name,
       Area: area,
-      image: image,
-      cuisine: cuisine,
-      category: category,
-      price: price
+      Cuisine: cuisine,
+      Category: category,
+      Price: price
     }
 
-    const updatedRestaurants = [...restaurantsArray, newRestaurant];
+    //modify Firebase
+    const db = getDatabase(); //database reference, not the database itself
+    const allRestaurantsRef = ref(db, "allRestaurants");
 
-    console.log(updatedRestaurants);
+    firebasePush(allRestaurantsRef, newRestaurant);
 
-    setRestaurantsArray(updatedRestaurants);
+    // const updatedRestaurants = [...restaurantsArray, newRestaurant];
+    // setRestaurantsArray(updatedRestaurants);
 
-    return updatedRestaurants;
   }
 
 

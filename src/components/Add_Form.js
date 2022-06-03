@@ -18,13 +18,13 @@ export function AddForm(props) {
         props.setAddress(event.target.value)
     }
 
-    const handleImageChange = (event) => {
-        if (event.target.files.length > 0 && event.target.files[0]) {
-            const imageFile = event.target.files[0]
-            props.setImageFile(imageFile);
-            props.setImageURL(URL.createObjectURL(imageFile));
-        }
-    }
+    // const handleImageChange = (event) => {
+    //     if (event.target.files.length > 0 && event.target.files[0]) {
+    //         const imageFile = event.target.files[0]
+    //         props.setImageFile(imageFile);
+    //         props.setImageURL(URL.createObjectURL(imageFile));
+    //     }
+    // }
 
     const handleCuisineChange = (event) => {
         props.setCuisine(event.target.value)
@@ -42,11 +42,13 @@ export function AddForm(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const updatedRestaurants = props.addRestaurant(props.name, props.address, props.imageFile, props.cuisine, props.category, props.price);
+        props.addRestaurant(props.name, props.address, props.cuisine, props.category, props.price);
 
         setAlertMessage("New restaurant added. View in 'Search'.");
 
-        props.setFilteredRestaurants(updatedRestaurants);
+        // props.setFilteredRestaurants(updatedRestaurants);
+
+        // console.log(updatedRestaurants);
 
         //clear inputs
         // props.setName('');
@@ -63,7 +65,7 @@ export function AddForm(props) {
     return (
 
         <div className="container">
-            <h2 className="text-center mt-4">Add a restaurant</h2>
+            <h2 className="text-center mt-4">Add a Restaurant</h2>
             <form onSubmit={handleSubmit}>
                 <div className="container">
                     <div className="textbox">
@@ -85,7 +87,7 @@ export function AddForm(props) {
                     </div>
                 </div>
 
-                <div className="container">
+                {/* <div className="container">
                     <p className="margin-t bigger-text">Add a picture for the restaurant</p>
                     <div className="container d-flex">
 
@@ -94,7 +96,7 @@ export function AddForm(props) {
 
 
                     </div>
-                </div>
+                </div> */}
 
                 <div className="container">
 
@@ -113,12 +115,12 @@ export function AddForm(props) {
                 <div className="container">
                     <p className="margin-t bigger-text">Dietary Accomodation</p>
                     <select value={props.category} onChange={handleCategoryChange} required>
-                        <option value="vegan">Vegan</option>
-                        <option value="gluten-free">Gluten-free</option>
-                        <option value="dairy-free">Dairy-free</option>
-                        <option value="nut-free">Nut-free</option>
-                        <option value="soy-free">Soy-free</option>
-                        <option value="seafood-free">Seafood-free</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Gluten-free">Gluten-free</option>
+                        <option value="Dairy-free">Dairy-free</option>
+                        <option value="Nut-free">Nut-free</option>
+                        <option value="Soy-free">Soy-free</option>
+                        <option value="Seafood-free">Seafood-free</option>
                     </select>
                 </div>
 
