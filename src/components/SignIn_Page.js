@@ -34,7 +34,7 @@ export function SignInPage(props) {
 
     return (
         <div className="main-body">
-            <StyledFirebaseAuth firebaseAuth={auth} uiConfig={FIREBASEUI_CONFIG_OBJ} className="mt-5" />
+            <StyledFirebaseAuth firebaseAuth={auth} uiConfig={FIREBASEUI_CONFIG_OBJ} className="signin-card" />
 
         </div>
     )

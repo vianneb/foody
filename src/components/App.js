@@ -164,7 +164,7 @@ export default function App(props) {
               } />
 
               <Route path="mylist" element={
-                <MyListPage myList={myList} setSelectedRestaurant={setSelectedRestaurant} currentUser={currentUser} />
+                <MyListPage myList={myList} setMyList={setMyList} setSelectedRestaurant={setSelectedRestaurant} currentUser={currentUser} />
               } />
             </Route>
           </Route>

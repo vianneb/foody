@@ -3,15 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 
 import { getAuth, signOut } from 'firebase/auth';
 
-export function SignInNavBar(props) {
-    return (
-
-        <nav className="NavbarItems">
-            <h1 className="navbar-logo">Welcome to Foody</h1>
-        </nav>
-    )
-}
-
 
 export function NavBar(props) {
 

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect} from "react";
 import { OrangeButton } from "./Orange_Button";
 import { Link } from "react-router-dom";
 
-import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet, onValue } from 'firebase/database';
 
 export function ExploreRestaurantsCard(props) {
   return (
@@ -44,36 +44,6 @@ export function RestaurantCard(props) {
 
   const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
-
-  // useEffect(() => {
-
-  //   const db = getDatabase(); //database reference, not the database itself
-  //   const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
-
-  //   const offFunction = onValue(favoritesRef, (snapshot) => {
-  //     const newValObj = snapshot.val();
-
-  //     //convert obj to array for rendering
-  //     const keys = Object.keys(newValObj);
-  //     const newObjArray = keys.map((keyString) => {
-
-  //       return newValObj[keyString];
-
-  //     })
-
-  //     props.setMyList(newObjArray);
-  //   })
-
-  //   //what to do when component unmounts (is removed, not shown)
-  //   const cleanup = () => {
-  //     //turn out the lights (remove the value listener)
-  //     offFunction();
-  //   }
-  //   //what should the effect hook callback return??
-  //   return cleanup;
-
-  // }, [])
-
   const handleAddClick = () => {
 
     //only add if not in favorites
@@ -83,7 +53,7 @@ export function RestaurantCard(props) {
       const db = getDatabase();
       const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
       firebaseSet(favoritesRef, currentFavorites);
-      props.setMyList(currentFavorites);
+      //props.setMyList(currentFavorites);
     }
   }
 
@@ -96,7 +66,7 @@ export function RestaurantCard(props) {
     const db = getDatabase();
     const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
     firebaseSet(favoritesRef, currentFavorites);
-    props.setMyList(currentFavorites);
+    //props.setMyList(currentFavorites);
   }
 
   return (

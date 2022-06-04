@@ -103,6 +103,10 @@ footer {
     margin-left: 2rem;
 }
 
+.signin-card {
+    padding-top: 220px;
+}
+
 /* pagination stuff */
 .paginationBttns {
     list-style: none;
@@ -130,6 +134,12 @@ footer {
 
 /* navbar stuff */
 /* mobile navbar css */
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+}
+
 .NavbarItems {
     background-color: #FFDB72;
     width: 100%;
