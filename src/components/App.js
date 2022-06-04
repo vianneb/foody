@@ -1,20 +1,41 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 
 import { HomePage } from "./Home";
 import { SharePage } from "./Add_Restaurant";
 import { SearchPage } from "./Search";
 import { MoreInformationPage } from "./More_Information";
 import { MyListPage } from "./My_List";
+import { SignInPage } from "./SignIn_Page";
+import { NavBar } from "./Navbar";
 
-import { getDatabase, ref, set as firebaseSet, onValue, push as firebasePush } from 'firebase/database';
+import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database';
 
-
-
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 export default function App(props) {
+
+  //state for current user
+  const nullUser = { uid: null, displayName: null };
+  const [currentUser, setCurrentUser] = useState(nullUser);
+
+  useEffect(() => {
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (firebaseUser) => {
+      console.log(firebaseUser);
+      if (firebaseUser) {
+        setCurrentUser(firebaseUser);
+      } else {
+        setCurrentUser(nullUser);
+      }
+
+
+    })
+
+  }, [])
+
 
   // declare state variables for more information page
   // to track when users click more information button
@@ -22,32 +43,13 @@ export default function App(props) {
 
   //declare state variables to track My List
   const [myList, setMyList] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
 
   const [restaurantsArray, setRestaurantsArray] = useState([]);
 
   //state for search results array 
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantsArray);
 
-  const favoriteRestaurant = (name) => {
-    const restaurantsCopy = filteredRestaurants.map((restaurant) => {
-
-      let copy = { ...restaurant };
-
-      if (copy.Name == name) {
-        copy.favorite = !isFavorite;
-        setIsFavorite(copy.favorite);
-        console.log(copy.favorite);
-      }
-
-      return copy;
-    })
-
-    setFilteredRestaurants(restaurantsCopy);
-  }
-
-
-
+  
   //define state for add restaurant form elements
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
@@ -57,26 +59,23 @@ export default function App(props) {
   const [category, setCategory] = useState('Vegan');
   const [price, setPrice] = useState('$');
 
- 
+
 
   useEffect(() => {
 
     const db = getDatabase(); //database reference, not the database itself
     const allRestaurantsRef = ref(db, "allRestaurants"); //another listener for restaurants array data
+
     const offFunction = onValue(allRestaurantsRef, (snapshot) => {
       const newValObj = snapshot.val();
-      console.log(newValObj);
 
       //convert obj to array for rendering
       const keys = Object.keys(newValObj);
-      console.log(keys);
       const newObjArray = keys.map((keyString) => {
 
         return newValObj[keyString];
 
       })
-
-      console.log(newObjArray);
 
       setRestaurantsArray(newObjArray);
       setFilteredRestaurants(newObjArray);
@@ -121,46 +120,57 @@ export default function App(props) {
       <div className="main-body">
 
         <Routes>
-          {/* default to Home page */}
-          <Route path="/" element={
-            <HomePage />
-          } />
-          <Route path="share" element={
-            <SharePage
-              name={name}
-              setName={setName}
-              address={address}
-              setAddress={setAddress}
-              imageFile={imageFile}
-              setImageFile={setImageFile}
-              imageURL={imageURL}
-              setImageURL={setImageURL}
-              cuisine={cuisine}
-              setCuisine={setCuisine}
-              category={category}
-              setCategory={setCategory}
-              price={price}
-              setPrice={setPrice}
-              addRestaurant={addRestaurant}
-              setFilteredRestaurants={setFilteredRestaurants}
-              restaurantsArray={restaurantsArray}
-            />
-          } />
+          <Route element={<AppLayout currentUser={currentUser} />}>
+            <Route path="home" element={
+              <HomePage />
+            } />
 
-          <Route path="search" element={
-            <SearchPage filteredRestaurants={filteredRestaurants} setFilteredRestaurants={setFilteredRestaurants} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} favoriteRestaurant={favoriteRestaurant} restaurantsArray={restaurantsArray} />
-          } />
+            <Route path="search" element={
+              <SearchPage filteredRestaurants={filteredRestaurants} setFilteredRestaurants={setFilteredRestaurants} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} restaurantsArray={restaurantsArray} currentUser={currentUser} />
+            } />
 
-          <Route path="details/:restaurantName" element={
-            <MoreInformationPage selectedRestaurant={selectedRestaurant} />
-          } />
+            <Route path="details/:restaurantName" element={
+              <MoreInformationPage selectedRestaurant={selectedRestaurant} />
+            } />
 
-          <Route path="mylist" element={
-            <MyListPage myList={myList} setSelectedRestaurant={setSelectedRestaurant} />
-          } />
+            <Route path="signin" element={
+              <SignInPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            } />
+
+            {/* Protected routes */}
+            <Route element={<ProtectedPage currentUser={currentUser} />}>
+
+
+              <Route path="share" element={
+                <SharePage
+                  name={name}
+                  setName={setName}
+                  address={address}
+                  setAddress={setAddress}
+                  imageFile={imageFile}
+                  setImageFile={setImageFile}
+                  imageURL={imageURL}
+                  setImageURL={setImageURL}
+                  cuisine={cuisine}
+                  setCuisine={setCuisine}
+                  category={category}
+                  setCategory={setCategory}
+                  price={price}
+                  setPrice={setPrice}
+                  addRestaurant={addRestaurant}
+                  setFilteredRestaurants={setFilteredRestaurants}
+                  restaurantsArray={restaurantsArray}
+                />
+              } />
+
+              <Route path="mylist" element={
+                <MyListPage myList={myList} setSelectedRestaurant={setSelectedRestaurant} currentUser={currentUser} />
+              } />
+            </Route>
+          </Route>
 
           {/* route to handle incorrect URLS */}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/home" />} />
 
         </Routes>
       </div>
@@ -168,3 +178,25 @@ export default function App(props) {
   )
 
 }
+
+function ProtectedPage(props) {
+  //...determine if user is logged in
+  if (!props.currentUser.uid) { //if no user, send to sign in
+    return <Navigate to="/signin" />
+  }
+  else { //otherwise, show the child route content
+    return <Outlet />
+  }
+
+}
+
+function AppLayout({ currentUser }) {
+  return (
+    <>
+      <NavBar currentUser={currentUser} />
+      {/* the nested route */}
+      <Outlet />
+    </>
+  )
+}
+

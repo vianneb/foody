@@ -20,7 +20,6 @@ export function HomePage(props) {
   return (
     <div className="App">
       <div className="main-body">
-        <NavBar />
         <FoodCardList foodList={foodList} />
         <CategoryList tagList={tagList} />
         <ExploreRestaurantsCard />

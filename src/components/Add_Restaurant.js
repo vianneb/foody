@@ -6,8 +6,6 @@ import { NavBar } from "./Navbar";
 export function SharePage(props) {
     return (
         <div className="main-body">
-
-            <NavBar />
             <AddForm
                 name={props.name}
                 setName={props.setName}

@@ -1,53 +1,27 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
+import { getAuth, signOut } from 'firebase/auth';
 
-
-export function SearchNavBar(props) {
-    // hamburger interactivity
-    const [isClicked, setIsClicked] = useState(false);
-
-    //callback
-    const handleHamburgerClick = () => {
-        setIsClicked(!isClicked);
-    }
-
+export function SignInNavBar(props) {
     return (
-        <div>
-            <nav className="NavbarItems">
-                <div className="grid">
-                    <div className="row">
-                        <div className="d-flex">
-                            <h1 className="navbar-logo">Foody</h1>
-                            <div className="menu-icon" onClick={handleHamburgerClick}>
-                                <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-                            </div>
 
-                            <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
-                                <li><Link className="hover-link nav-links" to="/">Home</Link></li>
-                                <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
-                                <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
-                                <li><Link className="hover-link nav-links" to="/mylist">My List</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                </div>
-            </nav>
-
-            {/* <h2 className="text-center mt-4">Search Restaurants</h2>
-            <div className="row search-form">
-                <form style={{ textAlign: "center" }} id="form search-bar" className="w-100">
-                    <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput} />
-                    <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
-                </form>
-            </div> */}
-        </div>
+        <nav className="NavbarItems">
+            <h1 className="navbar-logo">Welcome to Foody</h1>
+        </nav>
     )
 }
 
+
 export function NavBar(props) {
+
+    const currentUser = props.currentUser.uid;
+
+    const handleSignOut = (event) => {
+        console.log("signing out");
+        signOut(getAuth());
+    }
+
     const [isClicked, setIsClicked] = useState(false);
 
     //callback
@@ -68,6 +42,17 @@ export function NavBar(props) {
                 <li><Link className="hover-link nav-links" to="/share">Share</Link></li>
                 <li><Link className="hover-link nav-links" to="/search">Search</Link></li>
                 <li><Link className="hover-link nav-links" to="/mylist">My List</Link></li>
+                {!currentUser &&
+                    <li className="nav-item">
+                        <NavLink to="/signin" className="nav-link">Sign In</NavLink>
+                    </li>
+                }
+                {currentUser && <>
+                    <li className="nav-item">
+                        <button className="btn orange-btn btn-dark sign-out ms-3" onClick={handleSignOut}>Sign Out</button>
+                    </li>
+                </>
+                }
             </ul>
         </nav>
     )

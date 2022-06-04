@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { NavBar } from './Navbar';
+import React from 'react';
 import { OrangeButton } from './Orange_Button';
 
 
@@ -10,8 +9,6 @@ export function MoreInformationPage(props) {
     return (
 
         <div className="main-body">
-
-            <NavBar />
             <div className="d-flex ms-3 mt-4">
                 <h1>{props.selectedRestaurant.Name}</h1>
             </div>

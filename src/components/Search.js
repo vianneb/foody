@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import ReactPaginate from 'react-paginate';
-import { SearchNavBar } from "./Navbar";
 import { RestaurantList } from "./Restaurant_Card";
 
 
@@ -75,7 +74,6 @@ export function SearchPage(props) {
     return (
 
         <div className="main-body">
-            <SearchNavBar />
             <h2 className="text-center mt-4">Search Restaurants</h2>
             <div className="row search-form">
                 <form style={{ textAlign: "center" }} id="form search-bar" className="w-100" >
@@ -91,7 +89,7 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-            <RestaurantList restaurants={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} favoriteRestaurant={props.favoriteRestaurant} />
+            <RestaurantList restaurants={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} currentUser={props.currentUser}/>
             <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
