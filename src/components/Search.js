@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Alert } from "react-bootstrap";
 import ReactPaginate from 'react-paginate';
 import { RestaurantList } from "./Restaurant_Card";
@@ -19,6 +19,15 @@ export function SearchPage(props) {
 
     //state variables for alert messages
     const [alertMessage, setAlertMessage] = useState(null);
+
+      //state for search results array 
+    const [filteredRestaurants, setFilteredRestaurants] = useState(input)
+
+    useEffect(() => {
+        if (filteredRestaurants) {  // don't do anyhiting when filter is empty 
+        setFilteredRestaurants(filteredRestaurants);
+         }
+    } , [filteredRestaurants, input]);
 
     const handleInput = (event) => {
         setInput(event.target.value);

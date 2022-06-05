@@ -46,8 +46,13 @@ export default function App(props) {
   const [restaurantsArray, setRestaurantsArray] = useState([]);
 
   //state for search results array 
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantsArray);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantsArray)
 
+  useEffect(() => {
+    if (filteredRestaurants) {  // don't do anyhiting when filter is empty 
+    setFilteredRestaurants(filteredRestaurants);
+      }
+  }, [filteredRestaurants, setRestaurantsArray]);
   
   //define state for add restaurant form elements
   const [name, setName] = useState('');
