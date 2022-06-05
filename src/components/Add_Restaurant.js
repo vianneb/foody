@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AddForm } from "./Add_Form";
 
 
 export function SharePage(props) {
+
+    useEffect(() => {
+        props.setFilteredRestaurants(props.restaurantsArray);
+    }, [])
+    
     return (
         <div className="main-body">
             <AddForm
@@ -29,4 +34,5 @@ export function SharePage(props) {
         </div>
 
     )
+
 }

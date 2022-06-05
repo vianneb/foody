@@ -23,14 +23,6 @@ export function AddForm(props) {
         props.setAddress(event.target.value)
     }
 
-    const handleImageChange = (event) => {
-        if (event.target.files.length > 0 && event.target.files[0]) {
-            const imageFile = event.target.files[0]
-            props.setImageFile(imageFile);  //save to state
-            props.setImageURL(URL.createObjectURL(imageFile));
-        }
-    }
-
     const handleCuisineChange = (event) => {
         props.setCuisine(event.target.value)
     }
@@ -47,6 +39,13 @@ export function AddForm(props) {
         props.setDescription(event.target.value);
     }
     
+    const handleImageChange = (event) => {
+        if (event.target.files.length > 0 && event.target.files[0]) {
+            const imageFile = event.target.files[0]
+            props.setImageFile(imageFile);  //save to state
+            props.setImageURL(URL.createObjectURL(imageFile));
+        }
+    }
 
     //submit handler
     const handleSubmit = async (event) => {

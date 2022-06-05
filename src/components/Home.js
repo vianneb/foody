@@ -1,5 +1,4 @@
-import React from "react";
-import { NavBar } from "./Navbar";
+import React, { useEffect } from "react";
 import { CategoryList } from "./Category_Button";
 import { FoodCardList } from "./Food_Card";
 import { ExploreRestaurantsCard } from "./Restaurant_Card";
@@ -17,11 +16,16 @@ export function HomePage(props) {
 
   let tagList = ["Vegan", "Gluten-free", "Dairy-free", "Nut-free", "Soy-free", "Seafood-free"];
 
+  //set displayed restaurants to all restaurants when home first renders
+  useEffect(() => {
+    props.setFilteredRestaurants(props.restaurantsArray);
+  }, [])
+
   return (
     <div className="App">
       <div className="main-body">
         <FoodCardList foodList={foodList} />
-        <CategoryList tagList={tagList} />
+        <CategoryList tagList={tagList} setFilteredRestaurants={props.setFilteredRestaurants} filteredRestaurants={props.filteredRestaurants} />
         <ExploreRestaurantsCard />
       </div>
     </div>
