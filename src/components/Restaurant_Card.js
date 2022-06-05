@@ -44,6 +44,7 @@ export function RestaurantCard(props) {
 
   const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
+  // adding restaurants
   const handleAddClick = () => {
 
     //only add if not in favorites

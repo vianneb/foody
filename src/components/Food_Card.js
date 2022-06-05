@@ -27,7 +27,7 @@ export function FoodCard(props) {
 export function FoodCardList(props) {
   let foodItems = props.foodList.map((foodObj) => {
     let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
-    return component
+    return component;
   })
 
   return (

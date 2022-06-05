@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 export function CategoryButton(props) {
 
     const navigate = useNavigate();
-
+    
+    // filter restaurants when clicked on category
     const handleClick = (event) => {
         const clickedCategory = event.target.textContent.toLowerCase();
         const categoryRestaurants = props.filteredRestaurants.filter( (restaurant) => {
