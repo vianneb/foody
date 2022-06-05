@@ -2,31 +2,38 @@ import React, { useEffect } from "react";
 
 import { FavoriteList } from "./Restaurant_Card";
 
-import { getDatabase, ref, set as firebaseSet, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 // this file is to render the My List page
 
 export function MyListPage(props) {
 
-      //do this everytime component loads
+  //do this everytime component loads
   useEffect(() => {
 
     const db = getDatabase(); //database reference, not the database itself
     const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
-    console.log(favoritesRef);
 
     const offFunction = onValue(favoritesRef, (snapshot) => {
       const newValObj = snapshot.val();
 
-      //convert obj to array for rendering
-      const keys = Object.keys(newValObj);
-      const newObjArray = keys.map((keyString) => {
+      //change here
 
-        return newValObj[keyString];
+      if (newValObj != null) {
+        //convert obj to array for rendering
+        const keys = Object.keys(newValObj);
+        const newObjArray = keys.map((keyString) => {
 
-      })
+          return newValObj[keyString];
 
-      props.setMyList(newObjArray);
+        })
+
+        props.setMyList(newObjArray);
+
+      } else {
+        props.setMyList([]);
+
+      }
     })
 
     //what to do when component unmounts (is removed, not shown)
@@ -39,14 +46,14 @@ export function MyListPage(props) {
 
   }, [])
 
- 
 
-    const displayName = props.currentUser ? props.currentUser.displayName : null;
 
-    return(
-        <div className="main-body">
-            <h2 className="text-center mt-4"> {props.currentUser && displayName+"'s"} Favorite Restaurants</h2>
-            <FavoriteList myList={props.myList} setSelectedRestaurant={props.setSelectedRestaurant}/>
-        </div>
-    )
+  const displayName = props.currentUser ? props.currentUser.displayName : null;
+
+  return (
+    <div className="main-body">
+      <h2 className="text-center mt-4"> {props.currentUser && displayName + "'s"} Favorite Restaurants</h2>
+      <FavoriteList myList={props.myList} setSelectedRestaurant={props.setSelectedRestaurant} />
+    </div>
+  )
 }

@@ -24,7 +24,6 @@ export default function App(props) {
     const auth = getAuth();
 
     onAuthStateChanged(auth, (firebaseUser) => {
-      console.log(firebaseUser);
       if (firebaseUser) {
         setCurrentUser(firebaseUser);
       } else {
@@ -58,6 +57,7 @@ export default function App(props) {
   const [cuisine, setCuisine] = useState('');
   const [category, setCategory] = useState('Vegan');
   const [price, setPrice] = useState('$');
+  const [description, setDescription] = useState('');
 
 
 
@@ -93,14 +93,16 @@ export default function App(props) {
   }, [])
 
   //callback for form onSubmit
-  const addRestaurant = (name, area, cuisine, category, price) => {
+  const addRestaurant = (name, area, image, cuisine, category, price, description) => {
 
     const newRestaurant = {
       Name: name,
       Area: area,
+      Image: image,
       Cuisine: cuisine,
       Category: category,
-      Price: price
+      Price: price,
+      Description: description
     }
 
     //modify Firebase
@@ -157,6 +159,8 @@ export default function App(props) {
                   setCategory={setCategory}
                   price={price}
                   setPrice={setPrice}
+                  description={description}
+                  setDescription={setDescription}
                   addRestaurant={addRestaurant}
                   setFilteredRestaurants={setFilteredRestaurants}
                   restaurantsArray={restaurantsArray}

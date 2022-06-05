@@ -1,6 +1,5 @@
 import React from "react";
 import { AddForm } from "./Add_Form";
-import { NavBar } from "./Navbar";
 
 
 export function SharePage(props) {
@@ -21,6 +20,8 @@ export function SharePage(props) {
                 setCategory={props.setCategory}
                 price={props.price}
                 setPrice={props.setPrice} 
+                description={props.description}
+                setDescription={props.setDescription}
                 addRestaurant={props.addRestaurant}
                 setFilteredRestaurants={props.setFilteredRestaurants}
                 restaurantsArray={props.restaurantsArray}

@@ -23,6 +23,12 @@ export function MoreInformationPage(props) {
                 <OrangeButton text={props.selectedRestaurant.Cuisine} />
                 <OrangeButton text={props.selectedRestaurant.Category}/>
             </div>
+            <div className="d-flex ms-3">
+                <p>{props.selectedRestaurant.Description}</p>
+            </div>
+            <div className="d-flex ms-3">
+                <img src={props.selectedRestaurant.Image} alt={props.selectedRestaurant.Name}></img>
+            </div>
 
         </div>
     )

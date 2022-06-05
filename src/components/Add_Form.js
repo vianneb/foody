@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 
+//imports from
+import { getStorage, uploadBytes, ref as storageRef, getDownloadURL } from 'firebase/storage';
+
+
+
 
 export function AddForm(props) {
 
@@ -18,47 +23,57 @@ export function AddForm(props) {
         props.setAddress(event.target.value)
     }
 
-    // const handleImageChange = (event) => {
-    //     if (event.target.files.length > 0 && event.target.files[0]) {
-    //         const imageFile = event.target.files[0]
-    //         props.setImageFile(imageFile);
-    //         props.setImageURL(URL.createObjectURL(imageFile));
-    //     }
-    // }
+    const handleImageChange = (event) => {
+        if (event.target.files.length > 0 && event.target.files[0]) {
+            const imageFile = event.target.files[0]
+            props.setImageFile(imageFile);  //save to state
+            props.setImageURL(URL.createObjectURL(imageFile));
+        }
+    }
 
     const handleCuisineChange = (event) => {
         props.setCuisine(event.target.value)
-    }
-
-    const handlePriceChange = (event) => {
-        props.setPrice(event.target.value);
     }
 
     const handleCategoryChange = (event) => {
         props.setCategory(event.target.value);
     }
 
+    const handlePriceChange = (event) => {
+        props.setPrice(event.target.value);
+    }
+
+    const handleDescriptionChange = (event) => {
+        props.setDescription(event.target.value);
+    }
+    
+
     //submit handler
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        props.addRestaurant(props.name, props.address, props.cuisine, props.category, props.price);
+        //handle image upload 
+
+        const restaurantKey = props.name.toLowerCase().split(" ").join("");
+
+        const storage = getStorage();
+        const imageRef = storageRef(storage, "restaurantImages/" + restaurantKey + ".jpg");
+        await uploadBytes(imageRef, props.imageFile);
+        const imageUrlOnFirebase = await getDownloadURL(imageRef);
+        props.setImageURL(imageUrlOnFirebase);
+
+        //add a new restaurant to array of all restaurants
+        props.addRestaurant(props.name, props.address, props.imageURL, props.cuisine, props.category, props.price, props.description);
 
         setAlertMessage("New restaurant added. View in 'Search'.");
 
-        // props.setFilteredRestaurants(updatedRestaurants);
-
-        // console.log(updatedRestaurants);
-
         //clear inputs
-        // props.setName('');
-        // props.setAddress('');
-        //props.setImageFile(null);
-        // props.setCuisine('');
-        // props.setCategory('Vegan');
-        // props.setPrice('$');
-
-        //console.log(newRestaurant);
+        props.setName('');
+        props.setAddress('');
+        props.setCuisine('');
+        props.setCategory('Vegan');
+        props.setPrice('$');
+        props.setDescription('');
     }
 
 
@@ -87,16 +102,16 @@ export function AddForm(props) {
                     </div>
                 </div>
 
-                {/* <div className="container">
-                    <p className="margin-t bigger-text">Add a picture for the restaurant</p>
+                <div className="container">
+                    <label htmlFor="imageUpload" className="margin-t bigger-text">Add a picture for the restaurant</label>
                     <div className="container d-flex">
 
 
-                        <input onChange={handleImageChange} required type="file" id="myFile" name="filename"></input>
+                        <input onChange={handleImageChange} required type="file" id="imageUpload"></input>
 
 
                     </div>
-                </div> */}
+                </div>
 
                 <div className="container">
 
@@ -113,25 +128,38 @@ export function AddForm(props) {
 
 
                 <div className="container">
-                    <p className="margin-t bigger-text">Dietary Accomodation</p>
-                    <select value={props.category} onChange={handleCategoryChange} required>
-                        <option value="Vegan">Vegan</option>
-                        <option value="Gluten-free">Gluten-free</option>
-                        <option value="Dairy-free">Dairy-free</option>
-                        <option value="Nut-free">Nut-free</option>
-                        <option value="Soy-free">Soy-free</option>
-                        <option value="Seafood-free">Seafood-free</option>
-                    </select>
+                    <label htmlFor="categoryInput" className="margin-t bigger-text">Dietary Accomodation</label>
+                    <div>
+                        <select id="categoryInput" value={props.category} onChange={handleCategoryChange} required>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Gluten-free">Gluten-free</option>
+                            <option value="Dairy-free">Dairy-free</option>
+                            <option value="Nut-free">Nut-free</option>
+                            <option value="Soy-free">Soy-free</option>
+                            <option value="Seafood-free">Seafood-free</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div className="container">
-                    <p className="margin-t bigger-text">Price Range</p>
-                    <select value={props.price} onChange={handlePriceChange} required>
-                        <option value="$">$</option>
-                        <option value="$$">$$</option>
-                        <option value="$$$">$$$</option>
-                        <option value="$$$$">$$$$</option>
-                    </select>
+                    <label htmlFor="priceInput" className="margin-t bigger-text">Price Range</label>
+                    <div>
+                        <select id="priceInput" value={props.price} onChange={handlePriceChange} required>
+                            <option value="$">$</option>
+                            <option value="$$">$$</option>
+                            <option value="$$$">$$$</option>
+                            <option value="$$$$">$$$$</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="container">
+                    <label htmlFor="description" className="margin-t bigger-text">Restaurant Description</label>
+
+                    <div>
+                        <textarea value={props.description} id="description" required className="w-100" onChange={handleDescriptionChange}></textarea>
+                    </div>
+
                 </div>
 
                 <div className="d-flex container margin-t justify-content-center">

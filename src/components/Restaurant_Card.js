@@ -1,8 +1,8 @@
-import React, { useEffect} from "react";
+import React from "react";
 import { OrangeButton } from "./Orange_Button";
 import { Link } from "react-router-dom";
 
-import { getDatabase, ref, set as firebaseSet, onValue } from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
 export function ExploreRestaurantsCard(props) {
   return (
@@ -47,26 +47,31 @@ export function RestaurantCard(props) {
   const handleAddClick = () => {
 
     //only add if not in favorites
-    if (props.myList.indexOf(currentRestaurant) == -1) {
+    if (props.myList.indexOf(currentRestaurant) === -1) {
       const currentFavorites = [...props.myList, currentRestaurant];
+      
+      //console.log(currentFavorites);
+      console.log(props.myList);
+      console.log(currentFavorites);
+
       //update database
       const db = getDatabase();
       const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
       firebaseSet(favoritesRef, currentFavorites);
-      //props.setMyList(currentFavorites);
+      props.setMyList(currentFavorites);
     }
   }
 
   const handleRemoveClick = () => {
     const currentFavorites = props.myList.filter((element) => {
-      return element.Name != currentRestaurant.Name;
+      return element.Name !== currentRestaurant.Name;
     });
 
     //update database
     const db = getDatabase();
     const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
     firebaseSet(favoritesRef, currentFavorites);
-    //props.setMyList(currentFavorites);
+    props.setMyList(currentFavorites);
   }
 
   return (
