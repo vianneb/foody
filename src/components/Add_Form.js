@@ -4,9 +4,6 @@ import { Alert } from "react-bootstrap";
 //imports from
 import { getStorage, uploadBytes, ref as storageRef, getDownloadURL } from 'firebase/storage';
 
-
-
-
 export function AddForm(props) {
 
     //state variables for alert messages
@@ -55,7 +52,6 @@ export function AddForm(props) {
         //handle image upload 
 
         const restaurantKey = props.name.toLowerCase().split(" ").join("");
-
         const storage = getStorage();
         const imageRef = storageRef(storage, "restaurantImages/" + restaurantKey + ".jpg");
         await uploadBytes(imageRef, props.imageFile);

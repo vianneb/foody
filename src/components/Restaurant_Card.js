@@ -51,10 +51,6 @@ export function RestaurantCard(props) {
     if (props.myList.indexOf(currentRestaurant) === -1) {
       const currentFavorites = [...props.myList, currentRestaurant];
       
-      //console.log(currentFavorites);
-      console.log(props.myList);
-      console.log(currentFavorites);
-
       //update database
       const db = getDatabase();
       const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
