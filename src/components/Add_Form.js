@@ -39,6 +39,7 @@ export function AddForm(props) {
         props.setDescription(event.target.value);
     }
     
+    //handler for user uploaded images
     const handleImageChange = (event) => {
         if (event.target.files.length > 0 && event.target.files[0]) {
             const imageFile = event.target.files[0]

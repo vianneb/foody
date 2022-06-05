@@ -36,6 +36,7 @@ export function SearchPage(props) {
         newSearchQuery = newSearchQuery.toLowerCase();
         setSearchQuery(newSearchQuery);
 
+        // make a copy for list of restaurants in category
         let restaurantsCopy = props.restaurantsArray.filter((restaurant) => {
 
             if (searchQuery === "") {
@@ -52,7 +53,7 @@ export function SearchPage(props) {
             setAlertMessage("No results");
             props.setFilteredRestaurants(props.restaurantsArray);
         } else {
-            props.setFilteredRestaurants(restaurantsCopy);
+            props.setFilteredRestaurants(restaurantsCopy); // display restaurants in the category
         }
 
         
@@ -72,7 +73,6 @@ export function SearchPage(props) {
     
 
     return (
-
         <div className="main-body">
             <h2 className="text-center mt-4">Search Restaurants</h2>
             <div className="row search-form">
@@ -80,7 +80,6 @@ export function SearchPage(props) {
                     <input className="search" type="search" id="query" name="q" placeholder="Search..." onChange={handleInput} />
                     <button className="btn orange-btn" onClick={handleClick}><SearchIcon /></button>
                 </form>
-
             </div>
 
             <div>

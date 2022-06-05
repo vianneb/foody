@@ -4,8 +4,6 @@ import { OrangeButton } from './Orange_Button';
 
 export function MoreInformationPage(props) {
 
-
-
     return (
 
         <div className="main-body">

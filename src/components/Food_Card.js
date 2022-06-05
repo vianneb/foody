@@ -40,8 +40,8 @@ export function FoodCard(props) {
 
 export function FoodCardList(props) {
   let foodItems = props.foodList.map((foodObj) => {
-    let component = <FoodCard key={foodObj.title} foodObj={foodObj} setFilteredRestaurants={props.setFilteredRestaurants} filteredRestaurants={props.filteredRestaurants}/>
-    return component
+    let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
+    return component;
   })
 
   return (
