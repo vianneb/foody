@@ -24,7 +24,7 @@ export function HomePage(props) {
   return (
     <div className="App">
       <div className="main-body">
-        <FoodCardList foodList={foodList} />
+        <FoodCardList foodList={foodList} setFilteredRestaurants={props.setFilteredRestaurants} filteredRestaurants={props.filteredRestaurants}/>
         <CategoryList tagList={tagList} setFilteredRestaurants={props.setFilteredRestaurants} filteredRestaurants={props.filteredRestaurants} />
         <ExploreRestaurantsCard />
       </div>
