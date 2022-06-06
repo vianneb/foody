@@ -36,7 +36,7 @@ export function RestaurantCard(props) {
   const currentRestaurant = props.restaurant
 
 
-  //onClick callback
+  //onClick callback for more information
   const handleClick = () => {
     props.setSelectedRestaurant(currentRestaurant);
   }
@@ -48,14 +48,18 @@ export function RestaurantCard(props) {
   const handleAddClick = () => {
 
     //only add if not in favorites
+    console.log(props.myList.indexOf(currentRestaurant) === -1);
+    console.log(currentRestaurant);
+    console.log(props.myList);
     if (props.myList.indexOf(currentRestaurant) === -1) {
       const currentFavorites = [...props.myList, currentRestaurant];
-      
+      props.setMyList(currentFavorites);
+
       //update database
       const db = getDatabase();
       const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
       firebaseSet(favoritesRef, currentFavorites);
-      props.setMyList(currentFavorites);
+      
     }
   }
 
@@ -64,11 +68,13 @@ export function RestaurantCard(props) {
       return element.Name !== currentRestaurant.Name;
     });
 
+    props.setMyList(currentFavorites);
+
     //update database
     const db = getDatabase();
     const favoritesRef = ref(db, "userData/" + props.currentUser.uid + "/favoriteRestaurants");
     firebaseSet(favoritesRef, currentFavorites);
-    props.setMyList(currentFavorites);
+    
   }
 
   return (

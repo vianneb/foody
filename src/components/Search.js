@@ -42,8 +42,11 @@ export function SearchPage(props) {
             if (searchQuery === "") {
                 return true;
             } else {
-                let test = JSON.stringify(restaurant);
-                return test.toLowerCase().includes(newSearchQuery);
+                // let test = JSON.stringify(restaurant);
+                // return test.toLowerCase().includes(newSearchQuery);
+                return restaurant.Name.toLowerCase().includes(newSearchQuery)
+                    || restaurant.Category.toLowerCase() === newSearchQuery
+                    || restaurant.Cuisine.toLowerCase() === newSearchQuery;
             }
 
 

@@ -111,6 +111,10 @@ img {
     max-width: 900px;
 }
 
+button.btn-close {
+    margin-top: 0;
+}
+
 /* pagination stuff */
 .paginationBttns {
     list-style: none;
