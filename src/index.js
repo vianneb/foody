@@ -12,9 +12,6 @@ import './index.css';
 
 import App from './components/App';
 
-//import sample restaurant data
-import SAMPLE_RESTAURANTS from './data/restaurants_seattle.json';
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDYZ5DR3MyuiO8HX7a2yuekxNRJe2zAPoc",
