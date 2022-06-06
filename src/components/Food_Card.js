@@ -12,8 +12,6 @@ export function FoodCard(props) {
       return restaurant.Cuisine.toLowerCase().includes(clickedCuisine);
     })
 
-    console.log(cuisineRestaurants);
-
     props.setFilteredRestaurants(cuisineRestaurants);
 
     navigate("/search");
