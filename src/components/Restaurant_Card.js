@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
+//renders cuisine cards on Home page
 export function ExploreRestaurantsCard(props) {
   return (
     <div className="container mt-4">
@@ -31,16 +32,10 @@ export function ExploreRestaurantsCard(props) {
 
 }
 
+//renders restaurant cards in Search Page
 export function RestaurantCard(props) {
 
-  const currentRestaurant = props.restaurant
-
-
-  //onClick callback for more information
-  const handleClick = () => {
-    props.setSelectedRestaurant(currentRestaurant);
-  }
-
+  const currentRestaurant = props.restaurant;
 
   const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
@@ -61,6 +56,8 @@ export function RestaurantCard(props) {
   }
 
   const handleRemoveClick = () => {
+
+    //filter and remove the restaurant
     const currentFavorites = props.myList.filter((element) => {
       return element.Name !== currentRestaurant.Name;
     });
@@ -88,7 +85,7 @@ export function RestaurantCard(props) {
                 <p>{props.restaurant.Area}</p>
               </div>
               <div className="d-flex">
-                <Link to={"/details/" + urlParam}><button className="btn orange-btn btn-dark" onClick={handleClick}>{"More Information"}</button></Link>
+                <Link to={"/details/" + urlParam}><button className="btn orange-btn btn-dark">{"More Information"}</button></Link>
                 <button className="btn orange-btn btn-dark" onClick={handleAddClick}>{"Add to List"}</button>
                 <button className="btn orange-btn btn-dark" onClick={handleRemoveClick}>{"Remove from List"}</button>
               </div>
@@ -101,15 +98,10 @@ export function RestaurantCard(props) {
   );
 }
 
+//render restaurant cards in My List Page
 export function FavoriteCard(props) {
 
-  const currentRestaurant = props.restaurant
-
-  //onClick callback
-  const handleFaveClick = () => {
-    props.setSelectedRestaurant(currentRestaurant);
-  }
-
+  const currentRestaurant = props.restaurant;
 
   const urlParam = currentRestaurant.Name.toLowerCase().split(" ").join("");
 
@@ -127,7 +119,7 @@ export function FavoriteCard(props) {
                 <p>{props.restaurant.Area}</p>
               </div>
               <div>
-                <Link to={"/details/" + urlParam}><button className="btn orange-btn btn-dark" onClick={handleFaveClick}>{"More Information"}</button></Link>
+                <Link to={"/details/" + urlParam}><button className="btn orange-btn btn-dark">{"More Information"}</button></Link>
               </div>
             </div>
           </div>
@@ -137,7 +129,7 @@ export function FavoriteCard(props) {
   )
 }
 
-
+//helper function for restaurant cards in Search page
 export function RestaurantList(props) {
 
   let restaurantItems = props.restaurants.map((restaurant) => {
@@ -156,6 +148,7 @@ export function RestaurantList(props) {
 
 }
 
+//helper function for restaurant cards in My List page
 export function FavoriteList(props) {
 
   let favoriteItems = props.myList.map((restaurant) => {

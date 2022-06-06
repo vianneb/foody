@@ -42,8 +42,6 @@ export function SearchPage(props) {
             if (searchQuery === "") {
                 return true;
             } else {
-                // let test = JSON.stringify(restaurant);
-                // return test.toLowerCase().includes(newSearchQuery);
                 return restaurant.Name.toLowerCase().includes(newSearchQuery)
                     || restaurant.Category.toLowerCase() === newSearchQuery
                     || restaurant.Cuisine.toLowerCase() === newSearchQuery;
@@ -56,7 +54,7 @@ export function SearchPage(props) {
             setAlertMessage("No results");
             props.setFilteredRestaurants(props.restaurantsArray);
         } else {
-            props.setFilteredRestaurants(restaurantsCopy); // display restaurants in the category
+            props.setFilteredRestaurants(restaurantsCopy); // display restaurants from search
         }
 
         
@@ -91,7 +89,7 @@ export function SearchPage(props) {
                     <Alert variant="secondary" onClose={() => setAlertMessage(null)} dismissible="true">{alertMessage}</Alert>
                 }
             </div>
-            <RestaurantList restaurants={displayRestaurants} setSelectedRestaurant={props.setSelectedRestaurant} myList={props.myList} setMyList={props.setMyList} currentUser={props.currentUser}/>
+            <RestaurantList restaurants={displayRestaurants} myList={props.myList} setMyList={props.setMyList} currentUser={props.currentUser}/>
             <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}

@@ -10,22 +10,22 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 export function MoreInformationPage(props) {
 
+    //get URI
     const params = useParams();
 
+    //filter list of all restaurants to find the current one 
     const restaurantList = props.restaurantsArray.filter((restaurant) => {
         return restaurant.Name.toLowerCase().split(" ").join("").includes(params.restaurantName);
     })
 
+    //if the array is empty, display a spinner
     if (restaurantList.length === 0) {
         return <FontAwesomeIcon icon={faSpinner} className="mt-2 ms-3" spin size="2x" aria-label="Loading..." aria-hidden="false"/>;
     } 
-        
+    
+    //get object from array
     const selectedRestaurant = restaurantList[0];
-    
-    
 
-
-    console.log(selectedRestaurant);
 
     return (
 

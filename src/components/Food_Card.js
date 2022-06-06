@@ -6,7 +6,7 @@ export function FoodCard(props) {
 
   const navigate = useNavigate();
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     const clickedCuisine = props.foodObj.title.toLowerCase();
     const cuisineRestaurants = props.filteredRestaurants.filter((restaurant) => {
       return restaurant.Cuisine.toLowerCase().includes(clickedCuisine);

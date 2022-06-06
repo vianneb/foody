@@ -20,6 +20,7 @@ export default function App(props) {
   const nullUser = { uid: null, displayName: null };
   const [currentUser, setCurrentUser] = useState(nullUser);
 
+  //set currently logged-in user
   useEffect(() => {
     const auth = getAuth();
 
@@ -36,13 +37,10 @@ export default function App(props) {
   }, [])
 
 
-  // declare state variables for more information page
-  // to track when users click more information button
-  const [selectedRestaurant, setSelectedRestaurant] = useState('');
-
-  //declare state variables to track My List
+  //state to track My List (favorites)
   const [myList, setMyList] = useState([]);
 
+  //state for list of all restaurants
   const [restaurantsArray, setRestaurantsArray] = useState([]);
 
   //state for search results array 
@@ -111,9 +109,6 @@ export default function App(props) {
 
     firebasePush(allRestaurantsRef, newRestaurant);
 
-    // const updatedRestaurants = [...restaurantsArray, newRestaurant];
-    // setRestaurantsArray(updatedRestaurants);
-
   }
 
 
@@ -128,18 +123,18 @@ export default function App(props) {
             } />
 
             <Route path="search" element={
-              <SearchPage filteredRestaurants={filteredRestaurants} setFilteredRestaurants={setFilteredRestaurants} setSelectedRestaurant={setSelectedRestaurant} myList={myList} setMyList={setMyList} restaurantsArray={restaurantsArray} currentUser={currentUser} />
+              <SearchPage filteredRestaurants={filteredRestaurants} setFilteredRestaurants={setFilteredRestaurants} myList={myList} setMyList={setMyList} restaurantsArray={restaurantsArray} currentUser={currentUser} />
             } />
 
             <Route path="details/:restaurantName" element={
-              <MoreInformationPage selectedRestaurant={selectedRestaurant} restaurantsArray={restaurantsArray}/>
+              <MoreInformationPage restaurantsArray={restaurantsArray}/>
             } />
 
             <Route path="signin" element={
               <SignInPage currentUser={currentUser} setCurrentUser={setCurrentUser} />
             } />
 
-            {/* Protected routes */}
+            {/* Protected routes; user has to be logged in to access */}
             <Route element={<ProtectedPage currentUser={currentUser} />}>
 
 
@@ -168,7 +163,7 @@ export default function App(props) {
               } />
 
               <Route path="mylist" element={
-                <MyListPage myList={myList} setMyList={setMyList} setSelectedRestaurant={setSelectedRestaurant} currentUser={currentUser} />
+                <MyListPage myList={myList} setMyList={setMyList} currentUser={currentUser} />
               } />
             </Route>
           </Route>
@@ -188,7 +183,7 @@ export default function App(props) {
 }
 
 function ProtectedPage(props) {
-  //...determine if user is logged in
+  //determine if user is logged in
   if (!props.currentUser.uid) { //if no user, send to sign in
     return <Navigate to="/signin" />
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 
-//import stuff for user auth
+//imports for user auth
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { getAuth, EmailAuthProvider, } from 'firebase/auth';
 
@@ -28,6 +28,7 @@ export function SignInPage(props) {
 
     const auth = getAuth(); //firebase authenticator
 
+    //if user is logged, redirect from sign in page to home page
     if(props.currentUser.uid) {
         return <Navigate to="/home" />
     }
@@ -35,7 +36,6 @@ export function SignInPage(props) {
     return (
         <div className="main-body">
             <StyledFirebaseAuth firebaseAuth={auth} uiConfig={FIREBASEUI_CONFIG_OBJ} className="signin-card" />
-
         </div>
     )
 

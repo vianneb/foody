@@ -4,7 +4,6 @@
     padding-bottom: 25px;
 }
 
-
 h1,
 h2 {
     margin: 0 0 8px;
@@ -16,17 +15,8 @@ h2 {
     font-size: 18px;
 }
 
-.bg-c-yellow {
-    background-color: #FFC107;
-}
-
-.bg-c-yellow-light {
-    background-color: #FFDB72;
-}
-
 .bg-c-orange {
     background-color: #ff922c;
-
 }
 
 .txt-c-white {
@@ -54,10 +44,6 @@ h2 {
     background-color: #f1f1f1;
 }
 
-.hover-c-yellow:hover {
-    background-color: #FFC107;
-}
-
 input.search {
     width: 70%;
 }
@@ -78,11 +64,6 @@ div>.col-md-8>p {
 
 .margin-t {
     margin-top: 1em;
-}
-
-
-.hours {
-    margin: 2px 2px;
 }
 
 button {
@@ -142,7 +123,6 @@ button.btn-close {
 
 /* navbar stuff */
 /* mobile navbar css */
-
 .nav-item {
     display: flex;
     justify-content: center;
@@ -156,7 +136,6 @@ button.btn-close {
     justify-content: center;
     align-items: center;
 }
-
 
 .NavbarItems {
     position: relative;

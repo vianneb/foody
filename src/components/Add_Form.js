@@ -10,8 +10,7 @@ export function AddForm(props) {
     const [alertMessage, setAlertMessage] = useState(null);
 
 
-    //callback functions for state variables
-
+    //callback functions for state variables from add restaurant form
     const handleNameChange = (event) => {
         props.setName(event.target.value)
     }
@@ -45,12 +44,11 @@ export function AddForm(props) {
         }
     }
 
-    //submit handler
+    //form submit handler
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         //handle image upload 
-
         const restaurantKey = props.name.toLowerCase().split(" ").join("");
         const storage = getStorage();
         const imageRef = storageRef(storage, "restaurantImages/" + restaurantKey + ".jpg");
@@ -103,9 +101,7 @@ export function AddForm(props) {
                     <label htmlFor="imageUpload" className="margin-t bigger-text">Add a picture for the restaurant</label>
                     <div className="container d-flex">
 
-
                         <input onChange={handleImageChange} required type="file" id="imageUpload"></input>
-
 
                     </div>
                 </div>

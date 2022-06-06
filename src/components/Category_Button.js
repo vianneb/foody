@@ -5,7 +5,7 @@ export function CategoryButton(props) {
 
     const navigate = useNavigate();
     
-    // filter restaurants when clicked on category
+    // filter restaurants when category button is clicked
     const handleClick = (event) => {
         const clickedCategory = event.target.textContent.toLowerCase();
         const categoryRestaurants = props.filteredRestaurants.filter( (restaurant) => {

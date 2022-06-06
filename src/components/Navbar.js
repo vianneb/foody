@@ -9,20 +9,20 @@ export function NavBar(props) {
     const currentUser = props.currentUser.uid;
 
     // when users sign out
-    const handleSignOut = (event) => {
+    const handleSignOut = () => {
         signOut(getAuth());
     }
 
+
+    //state to track if navbar hamburger is clicked
     const [isClicked, setIsClicked] = useState(false);
 
-    //callback
-
+    //hamburger callback
     const handleHamburgerClick = () => {
         setIsClicked(!isClicked);
     }
 
     return (
-
         <nav className="NavbarItems">
             <header>
                 <h1 className="navbar-logo">Foody</h1>

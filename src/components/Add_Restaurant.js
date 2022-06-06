@@ -4,6 +4,7 @@ import { AddForm } from "./Add_Form";
 
 export function SharePage(props) {
 
+    //everytime component loads, set restaurants in search page to be list of entire restaurants
     useEffect(() => {
         props.setFilteredRestaurants(props.restaurantsArray);
     }, [])

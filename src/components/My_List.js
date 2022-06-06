@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
-
 import { FavoriteList } from "./Restaurant_Card";
 
 import { getDatabase, ref, onValue } from 'firebase/database';
 
-// this file is to render the My List page
 
 export function MyListPage(props) {
 
@@ -17,8 +15,6 @@ export function MyListPage(props) {
     const offFunction = onValue(favoritesRef, (snapshot) => {
       const newValObj = snapshot.val();
 
-      //change here
-
       if (newValObj != null) {
         //convert obj to array for rendering
         const keys = Object.keys(newValObj);
@@ -30,6 +26,7 @@ export function MyListPage(props) {
 
         props.setMyList(newObjArray);
 
+        //if the key in RTDB is null, set my list state to empty array
       } else {
         props.setMyList([]);
 
@@ -45,8 +42,6 @@ export function MyListPage(props) {
     return cleanup;
 
   }, [])
-
-
 
   const displayName = props.currentUser ? props.currentUser.displayName : null;
 

@@ -7,16 +7,17 @@ import { ExploreRestaurantsCard } from "./Restaurant_Card";
 export function HomePage(props) {
 
 
-  // define arrays for testing
+  // array with cuisines
   let foodList = [
     { title: "American", img: "img/burger.jpg", description: "Explore American restaurants near Seattle on Foody: burgers, sandwiches, BBQ and more." },
     { title: "Italian", img: "img/pasta.jpg", description: "Explore Italian restaurants near Seattle on Foody: pasta, antipasti, seafood, rissoto and more." },
     { title: "Mexican", img: "img/tacos.jpg", description: "Explore Mexican restaurants near Seattle on Foody: tacos, burritos, fajitas and more." },
     { title: "Japanese", img: "img/sushi.jpg", description: "Explore Japanese restaurants near Seattle on Foody: sushi, ramen, izakayas and more." }];
-
+  
+  //array with allergy categories
   let tagList = ["Vegan", "Gluten-free", "Dairy-free", "Nut-free", "Soy-free", "Seafood-free"];
 
-  //set displayed restaurants to all restaurants when home first renders
+  //set displayed restaurants on Search page to all restaurants when Home first renders
   useEffect(() => {
     props.setFilteredRestaurants(props.restaurantsArray);
   }, [])
