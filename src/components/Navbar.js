@@ -24,7 +24,9 @@ export function NavBar(props) {
     return (
 
         <nav className="NavbarItems">
-            <h1 className="navbar-logo">Foody</h1>
+            <header>
+                <h1 className="navbar-logo">Foody</h1>
+            </header>
             <div className="menu-icon" onClick={handleHamburgerClick}>
                 <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
