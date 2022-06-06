@@ -10,7 +10,6 @@ export function NavBar(props) {
 
     // when users sign out
     const handleSignOut = (event) => {
-        console.log("signing out");
         signOut(getAuth());
     }
 
