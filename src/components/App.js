@@ -178,6 +178,10 @@ export default function App(props) {
 
         </Routes>
       </div>
+
+      <footer>
+        <p> © 2022 Foody</p>
+      </footer>
     </div>
   )
 
