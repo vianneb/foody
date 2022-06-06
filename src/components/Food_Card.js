@@ -7,7 +7,7 @@ export function FoodCard(props) {
   const navigate = useNavigate();
 
   const handleClick = (event) => {
-    const clickedCuisine = event.target.parentElement.querySelector('.card-title').textContent.toLowerCase();
+    const clickedCuisine = props.foodObj.title.toLowerCase();
     const cuisineRestaurants = props.filteredRestaurants.filter((restaurant) => {
       return restaurant.Cuisine.toLowerCase().includes(clickedCuisine);
     })
@@ -40,7 +40,7 @@ export function FoodCard(props) {
 
 export function FoodCardList(props) {
   let foodItems = props.foodList.map((foodObj) => {
-    let component = <FoodCard key={foodObj.title} foodObj={foodObj} />
+    let component = <FoodCard key={foodObj.title} foodObj={foodObj} setFilteredRestaurants={props.setFilteredRestaurants} filteredRestaurants={props.filteredRestaurants}/>
     return component;
   })
 
