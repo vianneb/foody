@@ -30,7 +30,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App restaurantList={SAMPLE_RESTAURANTS}/>
+            <App/>
         </BrowserRouter>
     </React.StrictMode>
 );
