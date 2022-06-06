@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 
-//imports from
+//imports from firebase
 import { getStorage, uploadBytes, ref as storageRef, getDownloadURL } from 'firebase/storage';
-
-
 
 
 export function AddForm(props) {
@@ -63,7 +61,8 @@ export function AddForm(props) {
         props.setImageURL(imageUrlOnFirebase);
 
         //add a new restaurant to array of all restaurants
-        props.addRestaurant(props.name, props.address, props.imageURL, props.cuisine, props.category, props.price, props.description);
+        props.addRestaurant(props.name, props.address, imageUrlOnFirebase, props.cuisine, props.category, props.price, props.description);
+
 
         setAlertMessage("New restaurant added. View in 'Search'.");
 

@@ -107,7 +107,7 @@ export default function App(props) {
 
     //modify Firebase
     const db = getDatabase(); //database reference, not the database itself
-    const allRestaurantsRef = ref(db, "allRestaurants");
+    const allRestaurantsRef = ref(db, "allRestaurants/");
 
     firebasePush(allRestaurantsRef, newRestaurant);
 
