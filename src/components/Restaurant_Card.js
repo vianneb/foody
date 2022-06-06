@@ -48,9 +48,6 @@ export function RestaurantCard(props) {
   const handleAddClick = () => {
 
     //only add if not in favorites
-    console.log(props.myList.indexOf(currentRestaurant) === -1);
-    console.log(currentRestaurant);
-    console.log(props.myList);
     if (props.myList.indexOf(currentRestaurant) === -1) {
       const currentFavorites = [...props.myList, currentRestaurant];
       props.setMyList(currentFavorites);
