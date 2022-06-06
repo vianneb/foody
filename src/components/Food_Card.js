@@ -8,8 +8,6 @@ export function FoodCard(props) {
 
   const handleClick = (event) => {
     const clickedCuisine = props.foodObj.title.toLowerCase();
-    console.log(clickedCuisine)
-    console.log(props.filteredRestaurants);
     const cuisineRestaurants = props.filteredRestaurants.filter((restaurant) => {
       return restaurant.Cuisine.toLowerCase().includes(clickedCuisine);
     })
