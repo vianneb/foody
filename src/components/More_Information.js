@@ -1,31 +1,54 @@
 import React from 'react';
 import { OrangeButton } from './Orange_Button';
 
+import { useParams } from 'react-router-dom';
+
+//import font awesome icons for spinner
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+
 
 export function MoreInformationPage(props) {
+
+    const params = useParams();
+
+    const restaurantList = props.restaurantsArray.filter((restaurant) => {
+        return restaurant.Name.toLowerCase().split(" ").join("").includes(params.restaurantName);
+    })
+
+    if (restaurantList.length === 0) {
+        return <FontAwesomeIcon icon={faSpinner} className="mt-2 ms-3" spin size="2x" aria-label="Loading..." aria-hidden="false"/>;
+    } 
+        
+    const selectedRestaurant = restaurantList[0];
+    
+    
+
+
+    console.log(selectedRestaurant);
 
     return (
 
         <div className="main-body">
             <div className="d-flex ms-3 mt-4">
-                <h1>{props.selectedRestaurant.Name}</h1>
+                <h1>{selectedRestaurant.Name}</h1>
             </div>
             <div className="d-flex ms-3">
                 <span className="material-icons">place</span>
-                <p>{props.selectedRestaurant.Area}</p>
+                <p>{selectedRestaurant.Area}</p>
             </div>
             <div className="d-flex ms-3">
-                <button className="button">{props.selectedRestaurant.Price}</button>
+                <button className="button">{selectedRestaurant.Price}</button>
             </div>
             <div className="d-flex">
-                <OrangeButton text={props.selectedRestaurant.Cuisine} />
-                <OrangeButton text={props.selectedRestaurant.Category}/>
+                <OrangeButton text={selectedRestaurant.Cuisine} />
+                <OrangeButton text={selectedRestaurant.Category}/>
             </div>
             <div className="d-flex ms-3">
-                <p>{props.selectedRestaurant.Description}</p>
+                <p>{selectedRestaurant.Description}</p>
             </div>
             <div className="d-flex ms-3">
-                <img src={props.selectedRestaurant.Image} alt={props.selectedRestaurant.Name}></img>
+                <img src={selectedRestaurant.Image} alt={selectedRestaurant.Name}></img>
             </div>
 
         </div>

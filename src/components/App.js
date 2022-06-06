@@ -132,7 +132,7 @@ export default function App(props) {
             } />
 
             <Route path="details/:restaurantName" element={
-              <MoreInformationPage selectedRestaurant={selectedRestaurant} />
+              <MoreInformationPage selectedRestaurant={selectedRestaurant} restaurantsArray={restaurantsArray}/>
             } />
 
             <Route path="signin" element={
